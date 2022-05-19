@@ -1,0 +1,77 @@
+[{
+    "id":1,
+    "name":{
+            "fname":"bhhjf",
+            "lname":"gdtygh"
+           },
+    "complete":true,
+    "hobbies":["Reading","Singing"],
+    "friends": [
+          {
+            "id": "43",
+            "name": "gtfgbbh"
+          },
+          {
+              "id": "454",
+            "name": "gfd"
+          }
+        ]
+    },
+    {
+    "id":2,
+    "name":{
+            "fname":"ghf",
+            "lname":"fesc" 
+           },
+    "complete":false,
+    "hobbies":["Reading","Singing","Dancing"],
+    "friends": [
+          {
+            "id": "3",
+            "name": null
+          },
+          {
+              "id": "2",
+            "name": "aqw"
+          }
+        ]
+    },
+    {
+    "id":3,
+    "name":{
+            "fname":"wdeqnju",
+            "lname":"dgt" 
+           },
+    "complete":true,
+    "hobbies":[],
+    "friends": [
+          {
+            "id": "33",
+            "name": "ghnjuy"
+          },
+          {
+              "id": "545",
+            "name": "re"
+          },
+          {
+              "id": "76",
+            "name": "rrr"
+          }
+        ]
+    },
+    {
+    "id":4,
+    "name":{
+            "fname":"bhhjf",
+            "lname":"gdtygh" 
+           },
+    "complete":true,
+    "hobbies":["Reading"],
+    "friends": [
+          {
+            "id": "44",
+            "name": "tgre"
+          }
+        ]
+    }
+    ]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEmo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function () {
+      $('button').click(function () {
+        var iname = $("#ina6me").val();
+        var inumber = $("#6").val();
+
+        $.ajax({
+          method: "POST",
+          url: "trail.php",
+          dataType: "JSON",
+          async: true,
+          data: {
+            'name': iname,
+            'number':inumber
+          },
+          complete: function (msg) {
+            alert('complete');
+          },
+          success: function (result, status, xhr) {
+            console.log(result);
+            alert("Data: " + (result.first_name) + "\nStatus: " + status);
+          }
+        });
+
+      });
+    });
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="form">
+    <input type="text" name="name" id="iname">
+    <input type="number" name="num" id="inum">
+    <button type="submit">Submit</button>
+  </div>
+</body>
+
+</html>
