@@ -36,12 +36,21 @@ const val4:any[]=[];
    
 mode.map(sec => {
     sec.tables.map(tab => {
-        let val = {
-            id:sec.id,
-            name:tab.name,
-            upcommingCount:tab.upcoming_reservations.length
+        if(tab.upcoming_reservations.length>=1){
+            let val = {
+                id:sec.id,
+                name:tab.name,
+                upcommingCount:tab.upcoming_reservations.length
+            }
+            val4.push(val);
         }
-        val4.push(val);
+        
     })
 })
 console.log(val4);
+
+
+// let v:any;
+// for(let i of mode){
+//     v += i.id  
+// }
