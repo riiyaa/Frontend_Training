@@ -178,10 +178,12 @@ const detail = [{
     });
     //console.log(val1)
 
-    let txt = "";
     let val2 = detail.find(fun => {
       return fun.complete.valueOf() == false
     })
-    let val3 = val2?.friends
+    console.log(val2);
+    
+    let val3 = val2?.friends ? val2.friends : console.log("hfvjgb");  
+    let val4 = val2?.friends              //val3  
     console.log(val3);
     
