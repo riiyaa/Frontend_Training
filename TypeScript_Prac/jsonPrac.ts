@@ -47,8 +47,13 @@ mode.map(sec => {
         
     })
 })
-console.log(val4);
+// console.log(val4);
 
+
+let v = Object.entries(mode[1]);
+let v1 = Object.keys(mode[1]);
+let v2 = Object.values(mode[1]);
+// console.log(v , v1 , v2);
 
 // let v:any;
 // for(let i of mode){
