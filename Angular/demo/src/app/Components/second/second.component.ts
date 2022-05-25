@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 })
 export class SecondComponent {
   constructor() {
-
+    this.setCurrentClasses()
   }
 
   title1 = "Data Binding using Interpolation";
   Num1: number = 10;
   Num2: number = 20;
+  courses = ["a","b","c"]
   imgUrl = "https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg"
 
   save($event: any) {
@@ -22,4 +23,24 @@ export class SecondComponent {
       console.log($event.target.value);
     }
   }
+  currentClasses: Record<string, boolean> = {};
+  /* . . . */
+  setCurrentClasses() {
+    // CSS classes: added/removed per current state of component properties
+    this.currentClasses =  {
+      saveable: true,
+      modified: false,
+      special:  true,
+    };
+  }
+
+  @Input() data: number|undefined;
+
+
+  @Output() newItemEvent = new EventEmitter<string>();
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
+
+
 }

@@ -1,0 +1,19 @@
+<h1>Mini Calculator</h1>
+<div class="parts">
+  <div class="one">
+    <input [(ngModel)]="firstNum" type="text"  placeholder="Enter Number" />
+  </div>
+  <div class="two">
+    <input [(ngModel)]="secondNum" placeholder="Enter Number" type="text">
+  </div>
+</div>
+
+
+<div class="division">
+  <button type="button" value="sum" (click)="operation('sum')">Addtion</button>
+  <button type="button" value="sub" (click)="operation('sub')">Substraction</button>
+  <button type="button" value="mul" (click)="operation('mul')">Multiplication</button>
+  <button type="button" value="div" (click)="operation('div')">Division</button>
+</div>
+
+<div class="parts">{{ans}}</div>

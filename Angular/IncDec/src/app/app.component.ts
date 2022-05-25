@@ -8,10 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'IncDec';
   Num:number = 0;
-  Incre($event:any){
-    this.Num +=1
+  Incre(){
+    if(this.Num>=0) {
+      this.Num += 1
+    }
   }
-  Decre($event:any){
-    this.Num += -1
+  Decre(){
+    if(this.Num >0){
+      this.Num -= 1
+    }
+  }
+  incDec(num:boolean){
+      if(num){
+        this.Num ++
+      }else {
+        if(this.Num >0) {
+          this.Num --
+        }
+      }
   }
 }
