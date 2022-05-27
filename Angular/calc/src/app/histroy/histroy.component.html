@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="clearfix">
+    <div class="heading fl">
+      <h1>History</h1>
+    </div>
+    <div class="delete fr">
+      <button (click)="newArray()" type="button" >Clear History</button>
+    </div>
+  </div>
+  <div class="operationHistory">
+    <div class="operation" *ngFor="let arrays of array.reverse()" >
+      <div>{{arrays.getInput}}</div>
+      <div class="font">{{arrays.getResult}}</div>
+    </div>
+  </div>
+</div>
+

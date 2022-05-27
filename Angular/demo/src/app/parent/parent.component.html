@@ -1,0 +1,6 @@
+<p>Parent Component</p>
+<button (click)="toggleChild()">Add Child Component</button>
+<input type="text" [(ngModel)]="cname" >
+<app-child *ngIf="isChild" [cname]="cname">
+  <h2>Are you there?</h2>
+</app-child>

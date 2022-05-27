@@ -1,0 +1,41 @@
+.container{
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: FreeSans, serif;
+}
+.heading{
+  text-align: center;
+  color: darkslateblue;
+}
+.clearfix{
+  content: "";
+  width: 100%;
+  display: table;
+}
+.operationHistory {
+  text-align: right;
+  width: 290px;
+}
+.operation{
+  margin: 15px 0;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+  margin: 25px 0;
+}
+button{
+  padding:7px 10px;
+  color: navy;
+}
+.operationHistory{
+  height: 340px;
+  overflow-y: scroll;
+}
+.font{
+  font-size: 20px;
+  font-weight: bold;
+}
