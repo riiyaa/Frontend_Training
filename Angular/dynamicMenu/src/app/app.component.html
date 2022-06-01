@@ -1,0 +1,30 @@
+<div class="text-center font-monospace">
+  <h2>Dynamic Menu</h2>
+</div>
+<div class="nav-bar w-75">
+  <button *ngIf="!click else clickElse" (click)="clickBtn()">HRMS</button>
+</div>
+<ng-template #clickElse>
+  <button class="btn btn-secondary" (click)="clickBtn()">HRMS</button>
+  <div class="menu">
+    <button *ngIf="!timeClick else timeElse" (click)="clickTime()">Time Tracker</button>
+    <button>Company Policy</button>
+    <button *ngIf="!leaveClick else leaveElse" (click)="leaveTime()">Leave Management</button>
+    <button>Payroll</button>
+  </div>
+  <ng-template #timeElse>
+    <button (click)="clickTime()">Time Tracker</button>
+    <div class="sub-menu">
+      <button>Time Log</button>
+      <button>Time sheet</button>
+      <button>Request extra sheet</button>
+    </div>
+  </ng-template>
+  <ng-template #leaveElse>
+    <button (click)="leaveTime()">Leave Management</button>
+    <div class="sub-menu">
+      <button>Leaves</button>
+      <button>Leave report</button>
+    </div>
+  </ng-template>
+</ng-template>

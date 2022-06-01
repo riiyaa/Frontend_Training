@@ -1,0 +1,25 @@
+.main{
+ position: relative;
+}
+.menu{
+  display: inline-block;
+  border: 1px solid darkblue;
+  position:absolute;
+}
+.menu button{
+  display: block;
+  width: 180px;
+  padding: 5px;
+  border: none;
+}
+ button:hover{
+  background-color: lightblue;
+}
+.sub-menu{
+  width: 190px;
+  padding: 5px;
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: 180px;
+}

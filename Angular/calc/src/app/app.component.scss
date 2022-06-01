@@ -1,5 +1,5 @@
 .section{
-  font-family: FreeSans, serif;
+  font-family: SansSerif, serif !important;
 }
 .container{
   margin: 0 auto;
@@ -8,7 +8,7 @@
 }
 .heading{
   text-align: center;
-  color: darkcyan;
+  color: black;
 }
 .main-box{
   border: 1px solid grey;
@@ -28,8 +28,8 @@ input{
 .space{
   padding: 15px;
 }
+
 button.btn {
-  font-family: FreeSans, serif;
   font-size: 16px;
   font-weight: 600;
   padding: 15px;
@@ -47,7 +47,7 @@ button.equal{
   background-color: lightblue;
 }
 button.equal:hover{
-  background-color: cadetblue;
+  background-color: #cae5ee;
 }
 .group{
   width: 865px;

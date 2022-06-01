@@ -6,7 +6,7 @@
 }
 .heading{
   text-align: center;
-  color: darkslateblue;
+  color: black;
 }
 .clearfix{
   content: "";
@@ -18,7 +18,7 @@
   width: 290px;
 }
 .operation{
-  margin: 15px 0;
+  padding: 15px 0;
 }
 .fl{
   float: left;
@@ -29,7 +29,7 @@
 }
 button{
   padding:7px 10px;
-  color: navy;
+  color: black;
 }
 .operationHistory{
   height: 340px;
@@ -38,4 +38,7 @@ button{
 .font{
   font-size: 20px;
   font-weight: bold;
+}
+.operation:hover{
+  background-color: #dad8d8;
 }

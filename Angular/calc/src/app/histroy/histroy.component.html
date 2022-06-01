@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="operationHistory">
-    <div class="operation" *ngFor="let arrays of array.reverse()" >
+    <div class="operation" *ngFor="let arrays of array?.reverse()" >
       <div>{{arrays.getInput}}</div>
       <div class="font">{{arrays.getResult}}</div>
     </div>

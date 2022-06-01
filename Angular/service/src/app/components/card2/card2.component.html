@@ -1,0 +1,7 @@
+<h1>Card2 Component</h1>
+<button (click)="giveMsg()">Click Card1</button>
+<h2>Products</h2>
+<ng-container *ngFor="let items of item">
+  <p>Product Name: {{items.name}}</p>
+  <p>Product Id: {{items.id}}</p>
+</ng-container>

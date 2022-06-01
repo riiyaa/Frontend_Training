@@ -1,0 +1,89 @@
+
+  <div class="text-lg-start">
+    <h2>Uppercase Pipe</h2>
+    <b>{{title | uppercase}}</b><br/><br>
+    <h2>Lowercase Pipe</h2>
+    <b>{{title | lowercase}}</b><br><br>
+    <h2>Currency Pipe</h2>
+    <b>{{6589.23 | currency:"USD"}}</b><br/>
+    <b>{{6589.23 | currency:"INR":true}}</b>        //Boolean true is used to get the sign of the currency.
+    <br><br><h2>Date pipe</h2>
+    <b>{{todayDate | date:'d/M/y'}}</b><br/>
+    <b>{{todayDate | date:'fullDate'}}</b><br>
+    <br><h2>Decimal Pipe</h2>
+    <b>{{ 454.78787814 | number: '5.6' }}</b>               // 3 is for main integer, 4 -4 are for integers to be displayed.
+    <br><br><h2>Json Pipe</h2>
+    <b>{{ jsonVal | json }}</b><br>
+    <br><h2>Percent Pipe</h2>
+    <b>{{0.54565 | percent}}</b><br>
+    <br><h2>Slice Pipe</h2>
+    <b>{{months | slice:2:6}}</b>         //start with 2nd index end with 5th index
+    <br><br><h2>Custom SqrtPipe</h2>
+    <b>{{729 | sqrt}}</b>
+<!--    <h1>Change </h1>-->
+<!--    <h2>{{addtion()}}</h2>-->
+
+  </div>
+  <br><h1>Angular Select Dropdown</h1>
+
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label>Website:</label>
+      <select formControlName="website">
+        <option disabled>Select Website</option>
+        <option>Choose Website</option>
+        <option *ngFor="let web of websiteList">{{web.text}}</option>
+        <option *ngFor="let item of websiteList.items">{{item.text}}</option>
+      </select>
+    </div>
+  </form>
+
+  <br><button mat-button [matMenuTriggerFor]="animals" class="btn btn-success">Animal index</button>
+  <mat-menu #animals="matMenu">
+    <button mat-menu-item >Amphibians</button>
+    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+    <button mat-menu-item>Reptiles</button>
+  </mat-menu>
+  <mat-menu #vertebrates="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+    <button mat-menu-item>Amphibians</button>
+    <button mat-menu-item>Reptiles</button>
+    <button mat-menu-item>Birds</button>
+    <button mat-menu-item>Mammals</button>
+  </mat-menu>
+  <mat-menu #fish="matMenu">
+    <button mat-menu-item>Baikal oilfish</button>
+    <button mat-menu-item>Bala shark</button>
+    <button mat-menu-item>Ballan wrasse</button>
+    <button mat-menu-item>Bamboo shark</button>
+    <button mat-menu-item>Banded killifish</button>
+  </mat-menu>
+
+
+
+<button class="btn btn-info"  *ngIf="!click else clickElse" (click)="clickBtn()">HRMS</button>
+  <ng-template #clickElse>
+    <button class="btn btn-info" (click)="clickBtn()">HRMS</button>
+    <div class="menu">
+      <button *ngIf="!timeClick else timeElse" (click)="clickTime()">Time Tracker</button>
+      <button>Company Policy</button>
+      <button *ngIf="!leaveClick else leaveElse" (click)="leaveTime()">Leave Management</button>
+      <button>Payroll</button>
+    </div>
+    <ng-template #timeElse>
+      <button (click)="clickTime()">Time Tracker</button>
+      <div class="sub-menu">
+        <button>Time Log</button>
+        <button>Time sheet</button>
+        <button>Request extra sheet</button>
+      </div>
+    </ng-template>
+    <ng-template #leaveElse>
+      <button (click)="leaveTime()">Leave Management</button>
+      <div class="sub-menu">
+        <button>Leaves</button>
+        <button>Leave report</button>
+      </div>
+    </ng-template>
+  </ng-template>
+

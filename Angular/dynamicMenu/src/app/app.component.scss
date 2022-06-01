@@ -1,0 +1,40 @@
+.nav-bar{
+  padding: 5px;
+  background-color: #cae5ee;
+  margin: 0 auto;
+}
+.menu{
+  width: 180px;
+}
+button{
+  text-align: left;
+  padding: 5px;
+  display: block;
+  background-color: #cae5ee;
+  border: none;
+}
+.main{
+  position: relative;
+}
+.menu{
+  display: inline-block;
+  position:absolute;
+  top: 74px;
+  left: 162px;
+}
+.menu button{
+  display: block;
+  width: 180px;
+  padding: 5px;
+  border: none;
+}
+.sub-menu{
+  width: 183px;
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  left: 180px;
+}
+button:hover{
+  background-color: lightblue;
+}

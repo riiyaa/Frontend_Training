@@ -19,14 +19,16 @@ export class AppComponent {
 
   //PressNum function call when number are pressed
   pressNum(num:string){
-   if(this.input[this.input.length-1] == '='){       //After equal both value empty
-     this.input=''
-     this.result=''
-   }
     if(num == '.'){                               //dot validation
+      if(this.result == '0'|| this.result == ''){this.result = '0.'}
       if(!this.result.includes('.')){
       }else {return}
     }
+     if(this.input[this.input.length-1] == '='){       //After equal both value empty
+       this.input=''
+       this.result=''
+     }
+
    if(this.flag) {                                   //when operator pressed flag true
       this.result = ''
      this.result += num
@@ -39,11 +41,14 @@ export class AppComponent {
        this.result += num
      }
    }
-
+    if(num == '.'){                               //dot validation
+      if(this.result == '0'|| this.result == ''){this.result = '0.'}
+      if(!this.result.includes('.')){
+      }else {return}
+    }
   }
   //PressOp function call when operator are pressed
   pressOp(op:string){
-
     if(op != '='){                   //When operator is not equal
       if (this.flag) {
         this.input=this.input.slice(0,-1);
@@ -65,13 +70,15 @@ export class AppComponent {
             this.result = String(Number(this.firstNum) % Number(this.secondNum))
           }
           this.getInput = this.input+this.secondNum;
-          this.input =this.result + op
+          // @ts-ignore
+          this.input =Number(this.result) + op
           this.getResult = this.result;
           this.flag = !this.flag
-          this.getArray .push({getInput:this.input+this.secondNum,getResult:this.result})    //push into array
+          this.getArray .push({getInput:this.firstNum+this.operator+this.secondNum,getResult:this.result})    //push into array
           localStorage.setItem("History", JSON.stringify(this.getArray));                    //store in loacl storage
         }else {
-          this.input = this.result + op
+          // @ts-ignore
+          this.input = Number(this.result) + op
           this.flag = true;
         }
       }
@@ -129,6 +136,10 @@ export class AppComponent {
   }
   //When clear only display screen
   clear(){
+    if(this.input.includes('=')){
+      this.input = ''
+      this.result = '0'
+    }
     this.result = '0'
   }
   //When clear both the screen
