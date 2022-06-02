@@ -14,22 +14,25 @@ import { MobileChildComponent } from './mobile-child/mobile-child.component';
 import { TvChildComponent } from './tv-child/tv-child.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutComponent,
-    ContactComponent,
-    HomeComponent,
-    LaptopComponent,
-    MobileComponent,
-    TvComponent,
-    MobileChildComponent,
-    TvChildComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AboutComponent,
+        ContactComponent,
+        HomeComponent,
+        LaptopComponent,
+        MobileComponent,
+        TvComponent,
+        MobileChildComponent,
+        TvChildComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    exports: [
+        LaptopComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

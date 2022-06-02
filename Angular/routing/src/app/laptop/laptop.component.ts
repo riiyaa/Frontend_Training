@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-laptop',
+  selector: 'app-time-tracker',
   templateUrl: './laptop.component.html',
   styleUrls: ['./laptop.component.scss']
 })

@@ -18,10 +18,33 @@ export class AppComponent {
   clickTime(){
     this.timeClick = !this.timeClick
     this.leaveClick = false
+    this.payClick = false
   }
   leaveClick = false
   leaveTime() {
     this.leaveClick = !this.leaveClick
     this.timeClick = false
+    this.payClick = false
+  }
+  payClick = false
+  payTime(){
+    console.log("234345")
+    this.payClick = !this.payClick
+    this.timeClick = false
+    this.leaveClick = false
+  }
+
+  passClick = false
+  passTime() {
+    this.passClick = !this.passClick
+  }
+
+  toggleClick = false
+  toggleTime() {
+    this.toggleClick = !this.toggleClick
+  }
+
+  test() {
+    console.log("test")
   }
 }

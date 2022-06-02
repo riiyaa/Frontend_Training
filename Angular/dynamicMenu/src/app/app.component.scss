@@ -2,10 +2,9 @@
   padding: 5px;
   background-color: #cae5ee;
   margin: 0 auto;
+  width: 80%;
 }
-.menu{
-  width: 180px;
-}
+
 button{
   text-align: left;
   padding: 5px;
@@ -13,28 +12,53 @@ button{
   background-color: #cae5ee;
   border: none;
 }
-.main{
-  position: relative;
-}
 .menu{
+  width: 150px;
   display: inline-block;
   position:absolute;
-  top: 74px;
-  left: 162px;
+  top: 82px;
+  left: 130px;
+}
+.menu1 {
+  width: 420px;
+  display: inline-block;
+  position: absolute;
+  top: 82px;
+  left: 35%;
+}
+.menu2 {
+  width: 354px;
+  display: inline-block;
+  position: absolute;
+  top: 115px;
+  right: 100px;
 }
 .menu button{
   display: block;
-  width: 180px;
-  padding: 5px;
+  width: 150px;
+  padding: 10px;
   border: none;
 }
 .sub-menu{
-  width: 183px;
+  width: 25%;
   padding: 0px;
   position: absolute;
-  top: 0;
-  left: 180px;
+  top: 140px;
+  left: 280px;
 }
-button:hover{
+.nav-bar  button{
+  display: inline-block;
+  margin: 0 235px 0 0;
+}
+i{
+  background-color: #cae5ee;
+}
+i:hover{
   background-color: lightblue;
+}
+
+.icon{
+  position: absolute;
+  top: 247px;
+  left: 194px;
 }

@@ -1,30 +1,56 @@
 <div class="text-center font-monospace">
   <h2>Dynamic Menu</h2>
 </div>
-<div class="nav-bar w-75">
-  <button *ngIf="!click else clickElse" (click)="clickBtn()">HRMS</button>
+<div class="nav-bar">
+  <button *ngIf="!click else clickElse" (click)="clickBtn()">HRMS &#9660;</button>
+  <button *ngIf="!passClick else passElse" (click)="passTime()">Password Mgmt. &#9660;</button>
+  <button *ngIf="!toggleClick else toggleElse" (click)="toggleTime()">Toggle &#9660;</button>
 </div>
 <ng-template #clickElse>
-  <button class="btn btn-secondary" (click)="clickBtn()">HRMS</button>
+  <button (click)="clickBtn()">HRMS &#9660;</button>
   <div class="menu">
-    <button *ngIf="!timeClick else timeElse" (click)="clickTime()">Time Tracker</button>
-    <button>Company Policy</button>
-    <button *ngIf="!leaveClick else leaveElse" (click)="leaveTime()">Leave Management</button>
-    <button>Payroll</button>
+    <button routerLink="time-tracker">Time Tracker <i *ngIf="!timeClick else timeElse" (click)="clickTime()" class="fa fa-caret-down" ></i></button>
+    <button routerLink="policy">Company Policy</button>
+    <button routerLink="leave">Leave Management <i *ngIf="!leaveClick else leaveElse" (click)="leaveTime()" class="fa fa-caret-down"></i></button>
+    <button routerLink="payroll">Payroll <i *ngIf="!payClick" (click)="payTime()" class="fa fa-caret-down"></i></button>
+    <button routerLink="holiday">Holiday Management</button>
   </div>
   <ng-template #timeElse>
-    <button (click)="clickTime()">Time Tracker</button>
+    <i (click)="clickTime()" class="fa fa-caret-down"></i>
     <div class="sub-menu">
-      <button>Time Log</button>
-      <button>Time sheet</button>
-      <button>Request extra sheet</button>
+      <button [routerLink]="['time-log']">Time Log</button>
+      <button routerLink="time-sheet">Time sheet</button>
+      <button routerLink="extra-sheet">Request extra sheet</button>
     </div>
   </ng-template>
   <ng-template #leaveElse>
-    <button (click)="leaveTime()">Leave Management</button>
+    <i (click)="leaveTime()" class="fa fa-caret-down"></i>
     <div class="sub-menu">
-      <button>Leaves</button>
-      <button>Leave report</button>
+      <button routerLink="leaves">Leaves</button>
+      <button routerLink="leave-report">Leave report</button>
     </div>
   </ng-template>
+  <div *ngIf="payClick">
+    <div class="icon">
+      <i (click)="payTime()" class="fa fa-caret-down"></i>
+    </div>
+    <div class="sub-menu">
+      <button routerLink="payroll/salary-slip">Salary Slip</button>
+    </div>
+  </div>
 </ng-template>
+<ng-template #passElse>
+  <button (click)="passTime()">Password Mgmt. &#9660;</button>
+  <div class="menu1">
+    <button routerLink="password">Password Management</button>
+  </div>
+</ng-template>
+<ng-template #toggleElse>
+  <button (click)="toggleTime()">Toggle &#9660;</button>
+  <div class="menu2">
+    <button routerLink="toggle-report">Toggle Report</button>
+    <button routerLink="toggle-dashboard">Toggle Dashboard</button>
+  </div>
+</ng-template>
+<app-side-bar></app-side-bar>
+

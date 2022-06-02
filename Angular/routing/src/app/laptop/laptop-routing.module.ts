@@ -5,7 +5,7 @@ import {LaptopComponent} from "./laptop.component";
 
 const routes: Routes = [
   {path:'',component:LaptopComponent},
-  {path:'laptop-child',component:LaptopChildComponent}
+  {path:'time-tracker-child',component:LaptopChildComponent}
 ];
 
 @NgModule({
