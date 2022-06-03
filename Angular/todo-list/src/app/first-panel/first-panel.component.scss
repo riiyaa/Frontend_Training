@@ -1,0 +1,16 @@
+.header{
+  display: flex;
+  align-content: flex-start;
+  width: 100%;
+  padding: 25px 0;
+  background-color: #464444;
+}
+.new{
+  padding: 0 5px;
+  button{
+    color: white;
+  }
+}
+.tab{
+  flex: 1;
+}

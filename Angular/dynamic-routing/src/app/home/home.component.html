@@ -1,0 +1,24 @@
+<p>home works!</p>
+<div>
+  <ul>
+    <li (click)="select(item)" *ngFor="let item of array">
+      <span class="flex-column">{{item.id}} </span>{{item.name}}
+    </li>
+  </ul>
+</div>
+<mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider>
+
+
+<hr><hr>
+<mat-tab-group>
+  <mat-tab label="Fitrtrtrst">bhghfghfcyhujytfvhngfthtyhnygftjygtj</mat-tab>
+  <mat-tab label="Secontrtgrtd"> ghftghnytjuytgujyujyghygh 2 </mat-tab>
+  <mat-tab label="gdg"> Contehtfgyhfthftghfyghnt 3 </mat-tab>
+</mat-tab-group>

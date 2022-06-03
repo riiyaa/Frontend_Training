@@ -1,0 +1,24 @@
+<p>about works!</p>
+<hr>
+<div
+  cdkDropList
+  [cdkDropListData]="todo"
+  class="example-list"
+  (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+</div>
+<hr>
+<ol>
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol>
