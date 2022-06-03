@@ -2,55 +2,58 @@
   <h2>Dynamic Menu</h2>
 </div>
 <div class="nav-bar">
-  <button *ngIf="!click else clickElse" (click)="clickBtn()">HRMS &#9660;</button>
-  <button *ngIf="!passClick else passElse" (click)="passTime()">Password Mgmt. &#9660;</button>
-  <button *ngIf="!toggleClick else toggleElse" (click)="toggleTime()">Toggle &#9660;</button>
+  <button>HRMS <i *ngIf="!click " (click)="clickBtn()" class="fa fa-caret-down"></i></button>
+  <button >Password Mgmt. <i *ngIf="!passClick " (click)="passTime()" class="fa fa-caret-down"></i></button>
+  <button >Toggle <i *ngIf="!toggleClick" (click)="toggleTime()" class="fa fa-caret-down"></i></button>
 </div>
-<ng-template #clickElse>
-  <button (click)="clickBtn()">HRMS &#9660;</button>
+
+<div  *ngIf="click" class="pr">
+  <div class="nav1"><i  (click)="clickBtn()" class="fa fa-caret-down"></i></div>
   <div class="menu">
-    <button routerLink="time-tracker">Time Tracker <i *ngIf="!timeClick else timeElse" (click)="clickTime()" class="fa fa-caret-down" ></i></button>
+    <button routerLink="time-tracker">Time Tracker <i *ngIf="!timeClick " (click)="clickTime()" class="fa fa-caret-down" ></i></button>
     <button routerLink="policy">Company Policy</button>
-    <button routerLink="leave">Leave Management <i *ngIf="!leaveClick else leaveElse" (click)="leaveTime()" class="fa fa-caret-down"></i></button>
+    <button routerLink="leave">Leave Management <i *ngIf="!leaveClick " (click)="leaveTime()" class="fa fa-caret-down"></i></button>
     <button routerLink="payroll">Payroll <i *ngIf="!payClick" (click)="payTime()" class="fa fa-caret-down"></i></button>
     <button routerLink="holiday">Holiday Management</button>
   </div>
-  <ng-template #timeElse>
-    <i (click)="clickTime()" class="fa fa-caret-down"></i>
-    <div class="sub-menu">
-      <button [routerLink]="['time-log']">Time Log</button>
-      <button routerLink="time-sheet">Time sheet</button>
-      <button routerLink="extra-sheet">Request extra sheet</button>
+</div>
+
+<div *ngIf="passClick" class="pr">
+  <div class="nav2"><i  (click)="passTime()" class="fa fa-caret-down"></i></div>
+    <div class="menu1">
+      <button routerLink="password">Password Management</button>
     </div>
-  </ng-template>
-  <ng-template #leaveElse>
-    <i (click)="leaveTime()" class="fa fa-caret-down"></i>
-    <div class="sub-menu">
-      <button routerLink="leaves">Leaves</button>
-      <button routerLink="leave-report">Leave report</button>
+</div>
+
+<div *ngIf="toggleClick" class="pr">
+  <div class="nav3"><i  (click)="toggleTime()" class="fa fa-caret-down"></i></div>
+    <div class="menu2">
+      <button routerLink="toggle-report">Toggle Report</button>
+      <button routerLink="toggle-dashboard">Toggle Dashboard</button>
     </div>
-  </ng-template>
-  <div *ngIf="payClick">
-    <div class="icon">
-      <i (click)="payTime()" class="fa fa-caret-down"></i>
-    </div>
+</div>
+
+<div *ngIf="timeClick" class="pr">
+     <div class="sub-nav1"><i (click)="clickTime()" class="fa fa-caret-down"></i></div>
+      <div class="sub-menu">
+        <button routerLink="time-tracker/time-log">Time Log</button>
+        <button routerLink="time-tracker/time-sheet">Time sheet</button>
+        <button routerLink="time-tracker/extra-sheet">Request extra sheet</button>
+      </div>
+</div>
+
+<div *ngIf="leaveClick" class="pr">
+      <div class="sub-nav2"><i (click)="leaveTime()" class="fa fa-caret-down"></i></div>
+      <div class="sub-menu">
+        <button routerLink="leave/leaves">Leaves</button>
+        <button routerLink="leave/leave-report">Leave report</button>
+      </div>
+</div>
+  <div *ngIf="payClick" class="pr">
+    <div class="sub-nav3"><i (click)="payTime()" class="fa fa-caret-down"></i></div>
     <div class="sub-menu">
       <button routerLink="payroll/salary-slip">Salary Slip</button>
     </div>
   </div>
-</ng-template>
-<ng-template #passElse>
-  <button (click)="passTime()">Password Mgmt. &#9660;</button>
-  <div class="menu1">
-    <button routerLink="password">Password Management</button>
-  </div>
-</ng-template>
-<ng-template #toggleElse>
-  <button (click)="toggleTime()">Toggle &#9660;</button>
-  <div class="menu2">
-    <button routerLink="toggle-report">Toggle Report</button>
-    <button routerLink="toggle-dashboard">Toggle Dashboard</button>
-  </div>
-</ng-template>
 <app-side-bar></app-side-bar>
 

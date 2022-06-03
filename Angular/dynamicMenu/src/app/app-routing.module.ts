@@ -10,10 +10,18 @@ import {ToggleDashboardComponent} from "./toggle-dashboard/toggle-dashboard.comp
 import {SalarySlipComponent} from "./payroll/salary-slip/salary-slip.component";
 import {LeavesComponent} from "./leave/leaves/leaves.component";
 import {LeaveReportComponent} from "./leave/leave-report/leave-report.component";
+import {TimeTrackerComponent} from "./time-tracker/time-tracker.component";
+import {TimeLogComponent} from "./time-tracker/time-log/time-log.component";
+import {TimeSheetComponent} from "./time-tracker/time-sheet/time-sheet.component";
+import {ExtraSheetComponent} from "./time-tracker/extra-sheet/extra-sheet.component";
 
 
 const routes: Routes = [
-  {path:'time-tracker',loadChildren:() => import('./time-tracker/time-tracker-routing.module').then(m => m.TimeTrackerRoutingModule)},
+  {path:'time-tracker',component:TimeTrackerComponent,children:[
+      {path: 'time-log',component: TimeLogComponent},
+      {path: 'time-sheet',component: TimeSheetComponent},
+      {path: 'extra-sheet',component: ExtraSheetComponent}
+    ]},
   {path:'policy',component:PolicyComponent},
   {path:'leave',component:LeaveComponent,children:[
       {path: 'leaves',component: LeavesComponent},

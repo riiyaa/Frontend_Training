@@ -4,7 +4,6 @@
   margin: 0 auto;
   width: 80%;
 }
-
 button{
   text-align: left;
   padding: 5px;
@@ -16,22 +15,24 @@ button{
   width: 150px;
   display: inline-block;
   position:absolute;
-  top: 82px;
+  top: 0;
   left: 130px;
 }
 .menu1 {
   width: 420px;
   display: inline-block;
   position: absolute;
-  top: 82px;
-  left: 35%;
+  top: 0;
+  left: 36.8%;
 }
 .menu2 {
-  width: 354px;
   display: inline-block;
   position: absolute;
-  top: 115px;
-  right: 100px;
+  top: 0;
+  right: 25.2%;
+}
+.menu2 button,.sub-menu button{
+  width: 155px;
 }
 .menu button{
   display: block;
@@ -40,15 +41,15 @@ button{
   border: none;
 }
 .sub-menu{
-  width: 25%;
   padding: 0px;
   position: absolute;
-  top: 140px;
+  top: 0;
   left: 280px;
 }
 .nav-bar  button{
   display: inline-block;
-  margin: 0 235px 0 0;
+  margin: 0 185px 0 0;
+  width: 151px;
 }
 i{
   background-color: #cae5ee;
@@ -61,4 +62,37 @@ i:hover{
   position: absolute;
   top: 247px;
   left: 194px;
+}
+.nav1{
+  position: absolute;
+  left: 14.4%;
+  top: -33px;
+}
+.nav2 {
+  position: absolute;
+  top: -34px;
+  left: 46.4%;
+}
+.nav3{
+  position: absolute;
+  top: -34px;
+  right: 32.5%;
+}
+.sub-nav1 {
+  position: absolute;
+  top: 10px;
+  left: 18.3%;
+}
+.sub-nav2 {
+  position: absolute;
+  top: 122px;
+  left: 18.5%;
+}
+.sub-nav3 {
+  position: absolute;
+  top: 166px;
+  left: 15%;
+}
+.pr{
+  position: relative;
 }

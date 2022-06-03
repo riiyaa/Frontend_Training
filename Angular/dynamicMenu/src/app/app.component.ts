@@ -7,12 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamicMenu';
-
   click = false
   clickBtn() {
     this.click = !this.click
     this.leaveClick = false
     this.timeClick = false
+    this.toggleClick = false
+    this.passClick = false
+    this.payClick = false
   }
   timeClick = false
   clickTime(){
@@ -28,23 +30,26 @@ export class AppComponent {
   }
   payClick = false
   payTime(){
-    console.log("234345")
     this.payClick = !this.payClick
     this.timeClick = false
     this.leaveClick = false
   }
-
   passClick = false
   passTime() {
     this.passClick = !this.passClick
+    this.toggleClick = false
+    this.click = false
+    this.payClick = false
+    this.leaveClick = false
+    this.timeClick = false
   }
-
   toggleClick = false
   toggleTime() {
     this.toggleClick = !this.toggleClick
-  }
-
-  test() {
-    console.log("test")
+    this.click = false
+    this.passClick = false
+    this.payClick = false
+    this.leaveClick = false
+    this.timeClick = false
   }
 }
