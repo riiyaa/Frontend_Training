@@ -1,0 +1,7 @@
+<div *ngIf="_service.workspace" routerLink="/workspace/{{number}}">
+  <div *ngFor="let list of _service.workspace" class="column" >
+    <div class="card"  [ngStyle]="{'background-color':colors[_service.workspace.indexOf(list)]}" >
+      <h5>{{list}}</h5>
+    </div>
+  </div>
+</div>

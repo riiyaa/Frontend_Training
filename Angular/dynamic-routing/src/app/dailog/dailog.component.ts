@@ -7,8 +7,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./dailog.component.scss']
 })
 export class DailogComponent implements OnInit {
-
-
   ngOnInit(): void {
   }
 

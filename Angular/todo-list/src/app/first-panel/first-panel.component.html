@@ -1,10 +1,17 @@
 <div class="container">
-    <div class="header">
-      <div class="new">
-        <button class="btn btn-outline-secondary" mat-raised-button >New List</button>
-      </div>
-      <div class="tab">
-        <button>Tabbing</button>
-      </div>
+  <div class="header">
+    <div class="new">
+      <button class="btn btn-outline-secondary" mat-raised-button (click)="openDialog()">New List</button>
     </div>
+    <div class="tab">
+      <button class="btn btn-outline-secondary" mat-raised-button routerLink="workspace" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List</button>
+      <button class="btn btn-outline-secondary" mat-raised-button routerLink="schedule" routerLinkActive="active">Scheduled</button>
+      <button class="btn btn-outline-secondary" mat-raised-button routerLink="today" routerLinkActive="active">Today</button>
+    </div>
+  </div>
 </div>
+<div class="black">
+<!--  <app-workspace [item]="animal"></app-workspace>-->
+  <router-outlet></router-outlet>
+</div>
+
