@@ -6,5 +6,9 @@ import { Injectable } from '@angular/core';
 export class AppServiceService {
 
   constructor() { }
-  workspace:any = []
+  workspace:any = [];
+  array : any = []
+  id:number =0
+
+  // index = this.array.findIndex((i: any) => i == this.id)
 }

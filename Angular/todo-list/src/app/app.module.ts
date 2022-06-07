@@ -15,6 +15,11 @@ import { ScheduleComponent } from './first-panel/schedule/schedule.component';
 import { TodayComponent } from './first-panel/today/today.component';
 import { WorkspaceComponent } from './first-panel/workspace/workspace.component';
 import { CardComponent } from './first-panel/workspace/card/card.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { CardComponent } from './first-panel/workspace/card/card.component';
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
