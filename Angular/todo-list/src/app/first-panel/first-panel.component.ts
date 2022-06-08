@@ -12,7 +12,7 @@ export class FirstPanelComponent implements OnInit {
   index:any
   ngOnInit(): void {
     this.index = this._appService.array.findIndex((i: any) => i.id == this._appService.id);
-    console.log(this.index)
+    // console.log(this.index)
   }
   animal: any = [];
   name: string | undefined;
@@ -24,12 +24,31 @@ export class FirstPanelComponent implements OnInit {
       width: '250px',
       data: this.animal,
     });
-    console.log(this.index)
     dialogRef.afterClosed().subscribe(result => {
-      this._appService.workspace.push(result)
-      this._appService.id = Math.floor(100000 + Math.random() * 900000);
-      this._appService.array.push({name:result,id:this._appService.id,task:[]});
-      console.log(this._appService.array)
+      if(result != null || result != undefined){
+        this._appService.workspace.push(result)
+        this._appService.id = this._appService.makeId(6);
+        this._appService.array.push({
+          name:result,
+          id:this._appService.id,
+          task:[],
+          color:this._appService.setBg()});
+      }
+      // console.log(this._appService.array)
     });
   }
+
+  findArray() {
+    this._appService.todayArray.push(this._appService.array.map((data: any) => data.task.filter((i:any)=>i.tDate=='today')));
+    console.log(this._appService.todayArray)
+  }
+
+  // isToday(element:any): any {
+  //   // console.log(element.task,"task")
+  //   if(element.task == 'today'){
+  //     return element.task.tDate
+  //   }
+  // }
 }
+
+

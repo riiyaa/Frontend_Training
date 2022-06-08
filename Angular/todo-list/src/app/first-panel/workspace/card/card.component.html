@@ -5,11 +5,13 @@
       <mat-accordion *ngIf="_taskService.array[this.index].task" >
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false"
-                             *ngFor="let taskListName of _taskService.array[this.index].task"
-                             [ngClass]="{'red':this.selectValue=='red','blue':this.selectValue=='lightblue','org':this.selectValue=='orange'}">
+                             *ngFor="let taskListName of _taskService.array[this.index].task; let i = index"
+                             (click)="select(i)"
+                             [ngClass]="{'red':this._taskService.array[this.index].task[this.i].tColor=='red','blue':this._taskService.array[this.index].task[this.i].tColor=='lightblue','org':this._taskService.array[this.index].task[this.i].tColor=='orange'}"
+                             [id]="i" >
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{taskListName}}
+              {{taskListName.taskName}}
             </mat-panel-title>
             <mat-panel-description>
               {{this.cardId}}
@@ -19,16 +21,18 @@
             <hr>
             <div class="notes clearfix">
               <div class="note"><p>Note</p></div>
-              <div class="textArea"><textarea></textarea></div>
+              <div class="textArea"><textarea (change)="noteChanges($event)"></textarea></div>
             </div>
             <div class="details clearfix">
               <div class="dueDate">
                 <p>Due Date</p>
-                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0">
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0"
+                                         [value]="selectedState"
+                                         (change)="onChange($event)">
                   <mat-button-toggle value="today">Today</mat-button-toggle>
                   <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
                   <mat-button-toggle value="date" class="pad0"><mat-form-field appearance="fill">
-                    <input matInput [matDatepicker]="picker" placeholder="Choose Date">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose Date" (dateChange)="onDateChange($event)">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field></mat-button-toggle>
@@ -44,6 +48,10 @@
                   </mat-select>
                 </mat-form-field>
               </div>
+              <div class="buttons clearfix">
+                <button class="del btn btn-danger" (click)="deleteTask()">Delete</button>
+                <button class="save btn btn-success" (click)="saveTask()" >Save</button>
+              </div>
             </div>
           </div>
         </mat-expansion-panel>
@@ -51,7 +59,7 @@
     </div>
   </div>
   <div class="inputElement">
-    <button (click)="addTask(taskName.value)">+</button><input placeholder="Enter some task" #taskName>
+    <button (click)="addTask(taskName.value)" >+</button><input placeholder="Enter some task" #taskName (keyup.enter)="addTask(taskName.value)">
   </div>
 
 </div>

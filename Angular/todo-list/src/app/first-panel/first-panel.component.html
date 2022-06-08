@@ -6,7 +6,7 @@
     <div class="tab">
       <button class="btn btn-outline-secondary" mat-raised-button routerLink="workspace" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List</button>
       <button class="btn btn-outline-secondary" mat-raised-button routerLink="schedule" routerLinkActive="active">Scheduled</button>
-      <button class="btn btn-outline-secondary" mat-raised-button routerLink="today" routerLinkActive="active">Today</button>
+      <button class="btn btn-outline-secondary" mat-raised-button routerLink="today" routerLinkActive="active" (click)="findArray()">Today</button>
     </div>
   </div>
 </div>

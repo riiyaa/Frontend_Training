@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AppServiceService} from "../../app-service.service";
 
 @Component({
   selector: 'app-schedule',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _scheduleService : AppServiceService) { }
 
   ngOnInit(): void {
   }
+  panelOpenState = false
+  addTask(value: string) {
 
+  }
 }

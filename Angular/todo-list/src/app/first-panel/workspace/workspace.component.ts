@@ -12,5 +12,4 @@ export class WorkspaceComponent implements OnInit {
   ngOnInit(): void {
   }
   colors = ['red','blue','green','purple','orange','yellow','grey'];
-  number = Math.floor(100000 + Math.random() * 900000);
 }

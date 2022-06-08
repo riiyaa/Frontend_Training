@@ -11,10 +11,12 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="3">
+          <list size="5">
             <item index="0" class="java.lang.String" itemvalue="mat-button" />
             <item index="1" class="java.lang.String" itemvalue="cdkfocusinitial" />
             <item index="2" class="java.lang.String" itemvalue="{{animal}}" />
+            <item index="3" class="java.lang.String" itemvalue="{{i}}" />
+            <item index="4" class="java.lang.String" itemvalue="select(i)" />
           </list>
         </value>
       </option>
