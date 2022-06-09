@@ -1,25 +1,65 @@
 <div>
   <div class="showData"></div>
   <div class="addData">
-    <div class="dropdown">
-      <mat-accordion >
+    <div class="dropdown" *ngIf="_today.todayArray">
+      <mat-accordion>
         <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
+                             (closed)="panelOpenState = false"
+                             *ngFor="let taskName of _today.todayArray; let i = index"
+                             (click)="_today.select(i)"
+                             [ngClass]="{'red':this._today.todayArray[this.i].tColor=='red','blue':this._today.todayArray[this.i].tColor=='lightblue','org':this._today.todayArray[this.i].tColor=='orange'}"
+                             [id]="i" >
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Self aware panel
+              {{taskName.taskName}}
             </mat-panel-title>
             <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              {{taskName.workSpaceId}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <div class="description clearfix">
+            <hr>
+            <div class="notes clearfix">
+              <div class="note"><p>Note</p></div>
+              <div class="textArea"><textarea (change)="noteChanges($event)" [value]="_today.todayArray[this.i].tNotes"></textarea></div>
+            </div>
+            <div class="details clearfix">
+              <div class="dueDate">
+                <p>Due Date</p>
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0"
+                                         [value]="_today.todayArray[this.i].tDate"
+                                         (change)="onChange($event)">
+                  <mat-button-toggle value="today">Today</mat-button-toggle>
+                  <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
+                  <mat-button-toggle value="date" class="pad0"><mat-form-field appearance="fill">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose Date" (dateChange)="onDateChange($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field></mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <div class="priority">
+                <p>Priority</p>
+                <mat-form-field appearance="fill" >
+                  <mat-select [value]="_today.todayArray[this.i].tColor">
+                    <mat-option *ngFor="let color of _today.priority" [value]="color.value" (click)="selectCar(color)">
+                      {{color.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="buttons clearfix">
+                <button class="del btn btn-danger" (click)="delete()">Delete</button>
+                <button class="save btn btn-success" (click)="saveTask()">Save</button>
+              </div>
+            </div>
+          </div>
         </mat-expansion-panel>
       </mat-accordion>
     </div></div>
   <div class="inputElement">
-    <button (click)="addTask(taskName.value)" >+</button>
-    <input placeholder="Enter some task" #taskName (keyup.enter)="addTask(taskName.value)">
-    <select><option *ngFor="let list of this._today.workspace">{{list}}</option></select>
+    <button (click)="_today.addTask(taskName.value)" >+</button>
+    <input placeholder="Enter some task" #taskName (keyup.enter)="_today.addTask(taskName.value)">
+    <select (change)="_today.taskChange($event)"><option>select</option><option *ngFor="let list of this._today.workspace" [value]="list" >{{list}}</option></select>
   </div>
 </div>

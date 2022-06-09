@@ -9,8 +9,8 @@
     float: left;
     margin: 30px 0;
     background-color: #2b2a2a;
-    padding: 10px;
-    border: 1px outset darkgrey;
+    padding: 8px;
+    border: none;
     border-right: none;
   }
   select{
@@ -18,9 +18,8 @@
     float: right;
     margin: 30px 0;
     background-color: #2b2a2a;
-    padding: 12px;
-    border: 1px outset darkgrey;
-    border-left: none;
+    padding: 10px;
+    border: none;
     color: azure;
   }
   input{
@@ -28,9 +27,8 @@
     width: 80%;
     margin: 30px 0;
     background-color: #2b2a2a;
-    padding: 10px;
-    border: 1px outset darkgray;
-    border-left: none;
+    padding: 8px;
+    border: none;
     color: azure;
   };
 }
@@ -49,8 +47,8 @@
   background-color: #2b2a2a;
   color:azure;
 }
-.mat-expansion-panel-header {
-  height: 50px;
+.mat-expansion-panel-header[_ngcontent-lnt-c119] {
+  height: 37px;
 }
 .mat-accordion .mat-expansion-panel:not(.mat-expanded), .mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
   border-radius: 0;
@@ -61,4 +59,72 @@
 }
 .mat-expansion-panel-header-description{
   color:black !important;
+}
+.description {
+  width: 752px;
+  display: flex;
+}
+.notes {
+  float: left;
+  width: 300px;
+  margin: 5px;
+}
+.details{
+  float: left;
+  width: 420px;
+  margin: 5px;
+}
+textarea{
+  width:100%;
+  background-color: initial;
+  height: 130px;
+  border-color: black;
+}
+.mat-button-toggle-appearance-standard{
+  background: #6e6e6e ;
+  color: white;
+  height: 48px;
+}
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+  border: solid 1px #000;
+  height: 35px;
+}
+.mat-button-toggle-checked,.mat-select-panel {
+  background-color: #464444;
+  color: white;
+}
+.lineHeight{
+  line-height: 32px !important;
+}
+.mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 8px;
+}
+.pad0{
+  padding: 0 !important;
+}
+mat-button-toggle-group{
+  height: 35px;
+}
+.mat-select-value {
+  color: black !important;
+}
+.mat-select-panel{
+  background: #3a3939 !important;
+}
+.priority {
+  margin: 10px 0;
+}
+.buttons  button{
+  padding: 1px 10px;
+  font-size: 14px;
+}
+.del{
+  float: left;
+}
+.save{
+  float: right;
+}
+.mat-expansion-panel-header {
+  height: 36px;
 }

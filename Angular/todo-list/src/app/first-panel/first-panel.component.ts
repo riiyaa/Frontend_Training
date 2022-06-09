@@ -34,21 +34,10 @@ export class FirstPanelComponent implements OnInit {
           task:[],
           color:this._appService.setBg()});
       }
-      // console.log(this._appService.array)
     });
   }
 
-  findArray() {
-    this._appService.todayArray.push(this._appService.array.map((data: any) => data.task.filter((i:any)=>i.tDate=='today')));
-    console.log(this._appService.todayArray)
-  }
 
-  // isToday(element:any): any {
-  //   // console.log(element.task,"task")
-  //   if(element.task == 'today'){
-  //     return element.task.tDate
-  //   }
-  // }
 }
 
 
