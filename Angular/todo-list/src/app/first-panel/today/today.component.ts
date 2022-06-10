@@ -18,6 +18,9 @@ export class TodayComponent implements OnInit {
   dateValue:any;
   panelOpenState = false
   ngOnInit(): void {
+    // @ts-ignore
+    this._today.array = JSON.parse(localStorage.getItem('Data'))
+    this._today.findTodayArray()
   }
 
   noteChanges(e: any) {

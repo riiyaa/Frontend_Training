@@ -32,7 +32,7 @@
                   <mat-button-toggle value="today">Today</mat-button-toggle>
                   <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
                   <mat-button-toggle class="pad0"><mat-form-field appearance="fill">
-                    <input matInput [matDatepicker]="picker" placeholder="Choose Date" (dateChange)="onDateChange($event)" >
+                    <input matInput [matDatepicker]="picker" placeholder="Choose Date " (dateChange)="onDateChange($event)" >
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field></mat-button-toggle>
@@ -50,7 +50,7 @@
               </div>
               <div class="buttons clearfix">
                 <button class="del btn btn-danger" (click)="deleteTask()">Delete</button>
-                <button class="save btn btn-success" (click)="saveTask(panelOpenState)" >Save</button>
+                <button class="save btn btn-success" (click)="saveTask()" >Save</button>
               </div>
             </div>
           </div>

@@ -12,7 +12,8 @@ export class FirstPanelComponent implements OnInit {
   index:any
   ngOnInit(): void {
     this.index = this._appService.array.findIndex((i: any) => i.id == this._appService.id);
-    // console.log(this.index)
+    // @ts-ignore
+    this._appService.array = JSON.parse(localStorage.getItem('Data'))
   }
   animal: any = [];
   name: string | undefined;
@@ -31,9 +32,10 @@ export class FirstPanelComponent implements OnInit {
         this._appService.array.push({
           name:result,
           id:this._appService.id,
-          task:[],
-          color:this._appService.setBg()});
+          color:this._appService.setBg(),
+          task:[]});
       }
+      localStorage.setItem("Data", JSON.stringify(this._appService.array));
     });
   }
 
