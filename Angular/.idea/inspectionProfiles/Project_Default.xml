@@ -3,6 +3,7 @@
     <option name="myName" value="Project Default" />
     <inspection_tool class="AngularInvalidImportedOrDeclaredSymbol" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="AngularMissingOrInvalidDeclarationInModule" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CommaExpressionJS" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <Languages>
         <language minSize="156" name="TypeScript" />
@@ -11,12 +12,13 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="5">
+          <list size="6">
             <item index="0" class="java.lang.String" itemvalue="mat-button" />
             <item index="1" class="java.lang.String" itemvalue="cdkfocusinitial" />
             <item index="2" class="java.lang.String" itemvalue="{{animal}}" />
             <item index="3" class="java.lang.String" itemvalue="{{i}}" />
             <item index="4" class="java.lang.String" itemvalue="select(i)" />
+            <item index="5" class="java.lang.String" itemvalue="mat-raised-button" />
           </list>
         </value>
       </option>

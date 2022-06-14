@@ -1,59 +1,69 @@
 <div>
   <div class="showData">
-    <div class="addData" *ngIf="_scheduleService.final">
-      <div class="dropdown" *ngFor="let item of _scheduleService.final | keyvalue">
-        <div class="title" *ngIf="_scheduleService.final.length>0"><h4 >{{item.key}}</h4></div>
-        <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  {{item.value}}
-                </mat-panel-title>
-                <mat-panel-description>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div class="description clearfix">
-                <hr>
-                <div class="notes clearfix">
-                  <div class="note"><p>Note</p></div>
-                  <div class="textArea"><textarea></textarea></div>
+    <div class="addData">
+      <div class="dropdown" *ngFor="let item of _scheduleService.final | keyvalue ">
+        <div *ngIf="item.key">
+          <div class="title" *ngIf="item.value"><h4 >{{item.key}}</h4></div>
+          <mat-accordion >
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false"
+                                   *ngFor="let val of $any(item).value ;  let i = index"
+                                   (click)="_scheduleService.select(i); schedule(i,val.taskId)"
+                                   [ngClass]="{'red':val.tColor=='red','blue':val.tColor=='lightblue','org':val.tColor=='orange'}"
+                                   [id]="i" >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{val.taskName}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{val.workSpaceId}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="description clearfix">
+                  <hr>
+                  <div class="notes clearfix">
+                    <div class="note" ><p>Note</p></div>
+                    <div class="textArea"><textarea (change)="noteChanges($event,val.taskId)" [value]="val.tNotes"></textarea></div>
+                  </div>
+                  <div class="details clearfix">
+                    <div class="dueDate">
+                      <p>Due Date</p>
+                      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0"
+                                               [value]="val.tDate"
+                                               (change)="onChange($event,val.taskId)" >
+                        <mat-button-toggle value="today">Today</mat-button-toggle>
+                        <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
+                        <mat-button-toggle value="date" class="pad0"><mat-form-field appearance="fill">
+                          <input matInput [matDatepicker]="picker" placeholder="Choose Date" [value]="date" (dateChange)="onDateChange($event,val.taskId)">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field></mat-button-toggle>
+                      </mat-button-toggle-group>
+                    </div>
+                    <div class="priority">
+                      <p>Priority</p>
+                      <mat-form-field appearance="fill" >
+                        <mat-select [value]="val.tColor">
+                          <mat-option *ngFor="let color of _scheduleService.priority" [value]="color.value" (click)="selectCar(color,val.taskId)">
+                            {{color.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="buttons clearfix">
+                      <button class="del btn btn-danger" (click)="delete(val.taskId)">Delete</button>
+                      <button class="save btn btn-success" (click)="saveTask()">Save</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="details clearfix">
-                  <div class="dueDate">
-                    <p>Due Date</p>
-                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0">
-                      <mat-button-toggle value="today">Today</mat-button-toggle>
-                      <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
-                      <mat-button-toggle value="date" class="pad0"><mat-form-field appearance="fill">
-                        <input matInput [matDatepicker]="picker" placeholder="Choose Date">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                      </mat-form-field></mat-button-toggle>
-                    </mat-button-toggle-group>
-                  </div>
-                  <div class="priority">
-                    <p>Priority</p>
-                    <mat-form-field appearance="fill" >
-                      <mat-select>
-                        <mat-option>
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                  <div class="buttons clearfix">
-                    <button class="del btn btn-danger" >Delete</button>
-                    <button class="save btn btn-success" >Save</button>
-                  </div>
-                </div>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
+              </mat-expansion-panel>
+            </mat-accordion>
+        </div>
       </div>
       <div class="inputElement">
-      <button (click)="_scheduleService.addTask(taskName.value)" >+</button>
-      <input placeholder="Enter some task" #taskName (keyup.enter)="_scheduleService.addTask(taskName.value)">
-      <select (change)="_scheduleService.taskChange($event)"><option>select</option><option *ngFor="let list of this._scheduleService.workspace" [value]="list" >{{list}}</option></select>
+      <button (click)="_scheduleService.addTask(taskName.value); taskName.value = '' " >+</button>
+      <input placeholder="Enter some task" #taskName  (keyup.enter)="_scheduleService.addTask(taskName.value); taskName.value=''">
+      <select (change)="_scheduleService.taskChange($event)"><option>select</option><option *ngFor="let list of this._scheduleService.array" [value]="list.id" >{{list.name}}</option></select>
     </div>
     </div>
   </div>

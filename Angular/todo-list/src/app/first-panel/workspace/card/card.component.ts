@@ -18,15 +18,13 @@ export class CardComponent implements OnInit {
   public index: any;
   date:any
   noteValue:string=''
+  dateValue:any
   // taskListArray : any = []
 
   ngOnInit(): void {
     this.cardId = this.route.snapshot.paramMap.get('num');
     this.index = this._taskService.array.findIndex((i: any) => i.id == this.cardId);
-    let data: any;
-    // @ts-ignore
-    data = JSON.parse(localStorage.getItem('Data'));
-    this._taskService.array = data
+    // this.dateValue= new Date(this.date);
   }
 
   @ViewChild('taskName') inputName: any;
@@ -37,11 +35,8 @@ export class CardComponent implements OnInit {
     this._taskService.cardId = this._taskService.makeId(4);
     if(name!= ''){
       this._taskService.array[this.index].task.push({workspace:this.index,workSpaceId:this.cardId , taskId:this._taskService.cardId , taskName:name , tColor:'lightblue' , tDate:'today' , tNotes:' '});
-      this.inputName.nativeElement.value = ' ';
-      // @ts-ignore
-      let data = JSON.parse(localStorage.getItem("Data"));
-      data[this.index].task.push({workspace:this.index,workSpaceId:this.cardId , taskId:this._taskService.cardId , taskName:name , tColor:'lightblue' , tDate:'today' , tNotes:' '});
-      localStorage.setItem('Data', JSON.stringify(data));
+      this.inputName.nativeElement.value = '';
+      localStorage.setItem('Data', JSON.stringify(this._taskService.array));
     }
   }
   panelOpenState = false;
@@ -49,26 +44,17 @@ export class CardComponent implements OnInit {
   //set color of border of particular task
   selectCar(color:any) {
     this._taskService.array[this.index].task[this._taskService.i].tColor = color.value;
-    // @ts-ignore
-    let data = JSON.parse(localStorage.getItem("Data"));
-    data[this.index].task[this._taskService.i].tColor = color.value;
-    localStorage.setItem('Data', JSON.stringify(data));
+    localStorage.setItem('Data', JSON.stringify(this._taskService.array));
   }
 
   onChange($event: any) {
     this._taskService.array[this.index].task[this._taskService.i].tDate= $event.value;
-    // @ts-ignore
-    let data = JSON.parse(localStorage.getItem("Data"));
-    data[this.index].task[this._taskService.i].tDate = $event.value
-    localStorage.setItem('Data', JSON.stringify(data));
+    localStorage.setItem('Data', JSON.stringify(this._taskService.array));
   }
 
   deleteTask() {
     this._taskService.array[this.index].task.splice(this._taskService.i,1);
-    // @ts-ignore
-    let data = JSON.parse(localStorage.getItem("Data"));
-    data[this.index].task.splice(this._taskService.i,1)
-    localStorage.setItem('Data', JSON.stringify(data));
+    localStorage.setItem('Data', JSON.stringify(this._taskService.array));
   }
 
   saveTask() {
@@ -77,38 +63,32 @@ export class CardComponent implements OnInit {
     this.accordion?.closeAll();
     if(this._taskService.array[this.index].task[this._taskService.i].tDate == 'today'){
       this.date = this._taskService.current;
-      // @ts-ignore
-      let data = JSON.parse(localStorage.getItem("Data"));
-      data[this.index].task[this._taskService.i].tDate = 'today'
-      localStorage.setItem('Data', JSON.stringify(data));
+      localStorage.setItem('Data', JSON.stringify(this._taskService.array));
     }else if(this._taskService.array[this.index].task[this._taskService.i].tDate == 'tomorrow'){
       this.date = new Date(new Date().getTime() + (24 * 60 * 60 * 1000))
-      // @ts-ignore
-      let data = JSON.parse(localStorage.getItem("Data"));
-      data[this.index].task[this._taskService.i].tDate = 'tomorrow'
-      localStorage.setItem('Data', JSON.stringify(data));
+      localStorage.setItem('Data', JSON.stringify(this._taskService.array));
     }else{
       this._taskService.array[this.index].task[this._taskService.i].tDate = this.date;
-      // @ts-ignore
-      let data = JSON.parse(localStorage.getItem("Data"));
-      data[this.index].task[this._taskService.i].tDate = this.date
-      localStorage.setItem('Data', JSON.stringify(data));
+      localStorage.setItem('Data', JSON.stringify(this._taskService.array));
+      console.log(this._taskService.array,"abc")
     }
-    console.log(this._taskService.array[this.index].task)
   }
 
   noteChanges(e:any) {
     this._taskService.array[this.index].task[this._taskService.i].tNotes = e.target.value
     this.noteValue = this._taskService.array[this.index].task[this._taskService.i].tNotes
-    // @ts-ignore
-    let data = JSON.parse(localStorage.getItem("Data"));
-    data[this.index].task[this._taskService.i].tNotes = e.target.value
-    localStorage.setItem('Data', JSON.stringify(data));
+    localStorage.setItem('Data', JSON.stringify(this._taskService.array));
   }
 
   onDateChange(e:any) {
     this.date = (e.target.value);
+    this.dateValue = new Date(this.date)
+    console.log(this.dateValue,this.date)
     return this.date
+  }
+  localSelect(index: any) {
+    this.dateValue = new Date(this._taskService.array[this.index].task[index].tDate);
+    localStorage.setItem('Data', JSON.stringify(this._taskService.array));
   }
 }
 import {AppServiceService} from "../../../app-service.service";

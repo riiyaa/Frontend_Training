@@ -4,13 +4,15 @@ import {ScheduleComponent} from "./first-panel/schedule/schedule.component";
 import {TodayComponent} from "./first-panel/today/today.component";
 import {WorkspaceComponent} from "./first-panel/workspace/workspace.component";
 import {CardComponent} from "./first-panel/workspace/card/card.component";
+import {ErrorComponent} from "./first-panel/error/error.component";
 
 const routes: Routes = [
   {path:'',component:WorkspaceComponent},
   {path:'workspace',component:WorkspaceComponent,},
   {path:'workspace/:num',component:CardComponent},
   {path:'schedule',component:ScheduleComponent},
-  {path:'today',component:TodayComponent}
+  {path:'today',component:TodayComponent},
+  {path:'**',component:ErrorComponent}
 ];
 
 @NgModule({

@@ -10,8 +10,12 @@ export class WorkspaceComponent implements OnInit {
 
   constructor(public _service:AppServiceService) { }
   ngOnInit(): void {
-    // @ts-ignore
-    this._service.array = JSON.parse(localStorage.getItem('Data'))
+
   }
   colors = ['red','blue','green','purple','orange','yellow','grey'];
+
+  change() {
+    this._service.newShow = false
+    this._service.backShow = true
+  }
 }

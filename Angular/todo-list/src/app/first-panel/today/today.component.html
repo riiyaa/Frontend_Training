@@ -21,18 +21,18 @@
             <hr>
             <div class="notes clearfix">
               <div class="note"><p>Note</p></div>
-              <div class="textArea"><textarea (change)="noteChanges($event)" [value]="_today.todayArray[this.i].tNotes"></textarea></div>
+              <div class="textArea"><textarea (change)="noteChanges($event,taskName.taskId)" [value]="_today.todayArray[this.i].tNotes"></textarea></div>
             </div>
             <div class="details clearfix">
               <div class="dueDate">
                 <p>Due Date</p>
                 <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="lineHeight pad0"
                                          [value]="_today.todayArray[this.i].tDate"
-                                         (change)="onChange($event)">
+                                         (change)="onChange($event,taskName.taskId)">
                   <mat-button-toggle value="today">Today</mat-button-toggle>
                   <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
-                  <mat-button-toggle value="date" class="pad0"><mat-form-field appearance="fill">
-                    <input matInput [matDatepicker]="picker" placeholder="Choose Date" (dateChange)="onDateChange($event)">
+                  <mat-button-toggle value="dateValue" class="pad0"><mat-form-field appearance="fill">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose Date" [value]="dateValue" (dateChange)="onDateChange($event,taskName.taskId)">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field></mat-button-toggle>
@@ -42,14 +42,14 @@
                 <p>Priority</p>
                 <mat-form-field appearance="fill" >
                   <mat-select [value]="_today.todayArray[this.i].tColor">
-                    <mat-option *ngFor="let color of _today.priority" [value]="color.value" (click)="selectCar(color)">
+                    <mat-option *ngFor="let color of _today.priority" [value]="color.value" (click)="selectCar(color,taskName.taskId)">
                       {{color.viewValue}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
               <div class="buttons clearfix">
-                <button class="del btn btn-danger" (click)="delete()">Delete</button>
+                <button class="del btn btn-danger" (click)="delete(taskName.taskId)">Delete</button>
                 <button class="save btn btn-success" (click)="saveTask()">Save</button>
               </div>
             </div>
@@ -60,6 +60,6 @@
   <div class="inputElement">
     <button (click)="_today.addTask(taskName.value)" >+</button>
     <input placeholder="Enter some task" #taskName (keyup.enter)="_today.addTask(taskName.value)">
-    <select (change)="_today.taskChange($event)"><option>select</option><option *ngFor="let list of this._today.workspace" [value]="list" >{{list}}</option></select>
+    <select (change)="_today.taskChange($event)"><option>select</option><option *ngFor="let list of this._today.array" [value]="list.id" >{{list.name}}</option></select>
   </div>
 </div>

@@ -1,17 +1,25 @@
 <div class="container">
   <div class="header">
     <div class="new">
-      <button class="btn btn-outline-secondary" mat-raised-button (click)="openDialog()">New List</button>
+      <button class="btn btn-secondary" mat-raised-button (click)="openDialog()" *ngIf="_appService.newShow">New List</button>
+      <button class="btn btn-secondary" mat-raised-button routerLink="workspace" *ngIf="_appService.backShow" (click)="change()">Back to home</button>
     </div>
     <div class="tab">
-      <button class="btn btn-outline-secondary" mat-raised-button routerLink="workspace" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List</button>
-      <button class="btn btn-outline-secondary" mat-raised-button routerLink="schedule" routerLinkActive="active" (click)="_appService.findFinalArray()">Scheduled</button>
-      <button class="btn btn-outline-secondary" mat-raised-button routerLink="today" routerLinkActive="active" (click)="_appService.findTodayArray()">Today</button>
+      <button class="btn btn-secondary first" mat-raised-button routerLink="workspace" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="change()">List</button>
+      <button class="btn btn-secondary second" mat-raised-button routerLink="schedule" routerLinkActive="active" (click)="_appService.findFinalArray(); click()">Scheduled</button>
+      <button class="btn btn-secondary third" mat-raised-button routerLink="today" routerLinkActive="active" (click)="_appService.findTodayArray(); click()">Today</button>
+<!--      <mat-button-toggle-group name="select" aria-label="tab">-->
+<!--        <mat-button-toggle class="btn btn-secondary" routerLink="workspace" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="change()">List</mat-button-toggle>-->
+<!--        <mat-button-toggle class="btn btn-secondary" routerLink="schedule" routerLinkActive="active" (click)="_appService.findFinalArray(); click()">Schedule</mat-button-toggle>-->
+<!--        <mat-button-toggle class="btn btn-secondary" routerLink="today" routerLinkActive="active" (click)="_appService.findTodayArray(); click()">Today</mat-button-toggle>-->
+<!--      </mat-button-toggle-group>-->
+
     </div>
   </div>
+  <div class="black">
+    <!--  <app-workspace [item]="animal"></app-workspace>-->
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<div class="black">
-<!--  <app-workspace [item]="animal"></app-workspace>-->
-  <router-outlet></router-outlet>
-</div>
+
 

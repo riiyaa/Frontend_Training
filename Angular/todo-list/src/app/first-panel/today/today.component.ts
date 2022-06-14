@@ -8,6 +8,8 @@ import {MatAccordion, MatExpansionPanel} from "@angular/material/expansion";
   styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnInit {
+  wId: any;
+  tId: any;
 
   constructor(public _today : AppServiceService) { }
   @ViewChild(MatExpansionPanel) panel?: MatExpansionPanel;
@@ -16,40 +18,55 @@ export class TodayComponent implements OnInit {
   index:any;
   note:string='';
   dateValue:any;
-  panelOpenState = false
+  panelOpenState = false;
+  taskId:any;
+  date:any;
   ngOnInit(): void {
-    // @ts-ignore
-    this._today.array = JSON.parse(localStorage.getItem('Data'))
-    this._today.findTodayArray()
+    this._today.findTodayArray();
   }
 
-  noteChanges(e: any) {
-    this._today.todayArray[this._today.i].tNotes = e.target.value
+  noteChanges(e: any,id:any) {
+    this._today.todayArray[this._today.i].tNotes = e.target.value;
+    this.wId = this._today.array.findIndex((i:any)=> i.task.find((j:any)=> j.taskId == id))
+    this.tId = this._today.array[this.wId].task.findIndex((j:any)=>j.taskId == id);
+    localStorage.setItem('Data', JSON.stringify(this._today.array));
   }
 
-  onChange(e:any) {
+  onChange(e:any,id:any) {
     this._today.todayArray[this._today.i].tDate = e.value
+    this.wId = this._today.array.findIndex((i:any)=> i.task.find((j:any)=> j.taskId == id))
+    this.tId = this._today.array[this.wId].task.findIndex((j:any)=>j.taskId == id);
+    localStorage.setItem('Data', JSON.stringify(this._today.array));
   }
 
-  onDateChange(e: any) {
-      this.dateValue = e.target.value;
+  onDateChange(e: any,id:any) {
+    this.date = e.target.value
+    this.dateValue = new Date(this.date);
+    this.wId = this._today.array.findIndex((i:any)=> i.task.find((j:any)=> j.taskId == id))
+    this.tId = this._today.array[this.wId].task.findIndex((j:any)=>j.taskId == id);
+    localStorage.setItem('Data', JSON.stringify(this._today.array));
+    return this.date,this.dateValue;
   }
 
-  selectCar(c:any) {
+  selectCar(c:any,id:any) {
     this._today.todayArray[this._today.i].tColor = c.value
-    console.log(this._today.todayArray[this._today.i].tColor)
+    this.wId = this._today.array.findIndex((i:any)=> i.task.find((j:any)=> j.taskId == id))
+    this.tId = this._today.array[this.wId].task.findIndex((j:any)=>j.taskId == id);
+    localStorage.setItem('Data', JSON.stringify(this._today.array));
   }
 
-  delete() {
-    this.index = this._today.todayArray.find((i:any) => i.workSpaceId)
+  delete(id:any) {
     this._today.todayArray.splice(this._today.i,1)
-    this._today.array[this.index.workspace].task.splice(this._today.i,1)
+    this.wId = this._today.array.findIndex((i:any)=> i.task.find((j:any)=> j.taskId == id))
+    this.tId = this._today.array[this.wId].task.findIndex((j:any)=>j.taskId == id);
+    localStorage.setItem('Data', JSON.stringify(this._today.array));
   }
+
 
   saveTask() {
     this.panel?.close();
     this.accordion?.closeAll();
-    console.log(this._today.todayArray)
-   this._today.findTodayArray()
+    this._today.findTodayArray()
   }
+
 }

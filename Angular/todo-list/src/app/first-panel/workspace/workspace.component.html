@@ -1,6 +1,6 @@
 <div *ngIf="_service.workspace" >
   <div *ngFor="let list of _service.array" class="column" routerLink="/workspace/{{list.id}}">
-    <div class="card"  [ngStyle]="{'background-color':'#'+list.color}" >
+    <div class="card"  [ngStyle]="{'background-color':'#'+list.color}" (click)="change()">
       <h5>{{list.name}}</h5>
     </div>
   </div>

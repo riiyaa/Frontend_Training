@@ -6,7 +6,7 @@
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false"
                              *ngFor="let taskListName of _taskService.array[this.index].task; let i = index"
-                             (click)="_taskService.select(i)"
+                             (click)="_taskService.select(i);localSelect(i)"
                              [ngClass]="{'red':this._taskService.array[this.index].task[this.i].tColor=='red','blue':this._taskService.array[this.index].task[this.i].tColor=='lightblue','org':this._taskService.array[this.index].task[this.i].tColor=='orange'}"
                              [id]="i" >
           <mat-expansion-panel-header>
@@ -31,8 +31,9 @@
                                          (change)="onChange($event)">
                   <mat-button-toggle value="today">Today</mat-button-toggle>
                   <mat-button-toggle value="tomorrow">Tomorrow</mat-button-toggle>
-                  <mat-button-toggle class="pad0"><mat-form-field appearance="fill">
-                    <input matInput [matDatepicker]="picker" placeholder="Choose Date " (dateChange)="onDateChange($event)" >
+                  <mat-button-toggle value ="dateValue" class="pad0">
+                    <mat-form-field appearance="fill">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose Date " [value]="dateValue" (dateChange)="onDateChange($event)" >
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field></mat-button-toggle>
