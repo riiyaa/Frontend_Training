@@ -74,4 +74,8 @@ export class ScheduleComponent implements OnInit {
     this.date = new Date(this._scheduleService.array[this.wId].task[this.tId].tDate)
     localStorage.setItem('Data',JSON.stringify(this._scheduleService.array))
   }
+
+  // checkValue(name:any){
+  //   this._scheduleService.object.some(name)
+  // }
 }

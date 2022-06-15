@@ -17,6 +17,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatTabsModule} from "@angular/material/tabs";
+
+import {BreadcrumbModule} from 'angular-crumbs'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import {MatTabsModule} from "@angular/material/tabs";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatSliderModule, DragDropModule, MatFormFieldModule, FormsModule, MatDialogModule, MatExpansionModule, MatButtonModule, MatInputModule, MatTabsModule
+    BrowserAnimationsModule, MatSliderModule, DragDropModule, MatFormFieldModule, FormsModule, MatDialogModule, MatExpansionModule, MatButtonModule, MatInputModule, MatTabsModule,
+    BreadcrumbModule, MatButtonModule, MatFormFieldModule, MatFormFieldModule, MatFormFieldModule, MatFormFieldModule, MatInputModule
 
   ],
   providers: [],
