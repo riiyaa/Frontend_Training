@@ -1,15 +1,18 @@
 <div class="text-center font-monospace">
   <h2>Dynamic Menu</h2>
 </div>
+<div class=" div text-center container">
+  <xng-breadcrumb></xng-breadcrumb>
+</div>
 <div class="nav-bar">
-  <button>HRMS <i *ngIf="!click " (click)="clickBtn()" class="fa fa-caret-down"></i></button>
+  <button>HRMS <i *ngIf="!click " (click)="clickBtn()" class="fa fa-caret-down" ></i></button>
   <button >Password Mgmt. <i *ngIf="!passClick " (click)="passTime()" class="fa fa-caret-down"></i></button>
   <button >Toggle <i *ngIf="!toggleClick" (click)="toggleTime()" class="fa fa-caret-down"></i></button>
 </div>
 
-<div  *ngIf="click" class="pr">
+<div  *ngIf="click" class="pr" >
   <div class="nav1"><i  (click)="clickBtn()" class="fa fa-caret-down"></i></div>
-  <div class="menu">
+  <div class="menu" @slideInOut>
     <button routerLink="time-tracker">Time Tracker <i *ngIf="!timeClick " (click)="clickTime()" class="fa fa-caret-down" ></i></button>
     <button routerLink="policy">Company Policy</button>
     <button routerLink="leave">Leave Management <i *ngIf="!leaveClick " (click)="leaveTime()" class="fa fa-caret-down"></i></button>
@@ -20,14 +23,14 @@
 
 <div *ngIf="passClick" class="pr">
   <div class="nav2"><i  (click)="passTime()" class="fa fa-caret-down"></i></div>
-    <div class="menu1">
+    <div class="menu1" @slideInOut>
       <button routerLink="password">Password Management</button>
     </div>
 </div>
 
 <div *ngIf="toggleClick" class="pr">
   <div class="nav3"><i  (click)="toggleTime()" class="fa fa-caret-down"></i></div>
-    <div class="menu2">
+    <div class="menu2" @slideInOut>
       <button routerLink="toggle-report">Toggle Report</button>
       <button routerLink="toggle-dashboard">Toggle Dashboard</button>
     </div>
@@ -35,7 +38,7 @@
 
 <div *ngIf="timeClick" class="pr">
      <div class="sub-nav1"><i (click)="clickTime()" class="fa fa-caret-down"></i></div>
-      <div class="sub-menu">
+      <div class="sub-menu" @slideInOut>
         <button routerLink="time-tracker/time-log">Time Log</button>
         <button routerLink="time-tracker/time-sheet">Time sheet</button>
         <button routerLink="time-tracker/extra-sheet">Request extra sheet</button>
@@ -44,16 +47,17 @@
 
 <div *ngIf="leaveClick" class="pr">
       <div class="sub-nav2"><i (click)="leaveTime()" class="fa fa-caret-down"></i></div>
-      <div class="sub-menu">
+      <div class="sub-menu" @slideInOut>
         <button routerLink="leave/leaves">Leaves</button>
         <button routerLink="leave/leave-report">Leave report</button>
       </div>
 </div>
   <div *ngIf="payClick" class="pr">
     <div class="sub-nav3"><i (click)="payTime()" class="fa fa-caret-down"></i></div>
-    <div class="sub-menu">
+    <div class="sub-menu" @slideInOut>
       <button routerLink="payroll/salary-slip">Salary Slip</button>
     </div>
   </div>
-<app-side-bar></app-side-bar>
-<xng-breadcrumb></xng-breadcrumb>
+
+<app-side-bar @fade></app-side-bar>
+

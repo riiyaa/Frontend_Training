@@ -17,6 +17,7 @@ import { TimeSheetComponent } from './time-tracker/time-sheet/time-sheet.compone
 import { ExtraSheetComponent } from './time-tracker/extra-sheet/extra-sheet.component';
 import {SalarySlipComponent} from "./payroll/salary-slip/salary-slip.component";
 import {BreadcrumbModule} from "xng-breadcrumb";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {BreadcrumbModule} from "xng-breadcrumb";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
