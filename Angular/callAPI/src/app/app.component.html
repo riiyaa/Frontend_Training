@@ -1,0 +1,32 @@
+<h1 class="text-center">API call</h1>
+<table width="100%">
+  <tr>
+    <th>Id&nbsp;</th>
+    <th>PostId&nbsp;</th>
+    <th>Name&nbsp;</th>
+    <th>Email</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let datas of data">
+    <td>{{datas.id}}</td>
+    <td>{{datas.postId}}</td>
+    <td>{{datas.name}}</td>
+    <td>{{datas.email}}</td>
+    <td>{{datas.body}}</td>
+  </tr>
+
+
+
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Name</th>-->
+<!--    <th>Username</th>-->
+<!--    <th>Email</th>-->
+<!--  </tr>-->
+
+<!--  <tr *ngFor="let data of dataFromServer">-->
+<!--    <td>{{data.id}}</td>-->
+<!--    <td>{{data.name}}</td>-->
+<!--    <td>{{data.username}}</td>-->
+<!--  </tr>-->
+</table>

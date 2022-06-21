@@ -20,6 +20,7 @@ export class ScheduleComponent implements OnInit {
     // @ts-ignore
     this._scheduleService.final = JSON.parse(localStorage.getItem('Data'))
     this._scheduleService.findFinalArray();
+    console.log(this._scheduleService.final)
   }
   panelOpenState = false
   wId:any;
@@ -74,8 +75,4 @@ export class ScheduleComponent implements OnInit {
     this.date = new Date(this._scheduleService.array[this.wId].task[this.tId].tDate)
     localStorage.setItem('Data',JSON.stringify(this._scheduleService.array))
   }
-
-  // checkValue(name:any){
-  //   this._scheduleService.object.some(name)
-  // }
 }

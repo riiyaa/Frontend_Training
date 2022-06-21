@@ -1,0 +1,35 @@
+.container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(255 255 255 / 0.52); /* Black w/ opacity */
+}
+
+.content {
+  background-color: #ffe8e8;
+  margin: auto;
+  padding: 20px;
+  border: 1px outset darkred;
+  border-radius: 5px;
+  width: 40%;
+}
+button{
+  margin: 5px;
+  width: 100px;
+  border: 2px outset darkred;
+  border-radius: 5px;
+  padding: 5px;
+}
+button:hover{
+background-color: firebrick;
+}
+.voted {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}

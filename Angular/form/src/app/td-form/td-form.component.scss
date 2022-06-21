@@ -1,0 +1,10 @@
+.ng-pristine,.ng-invalid, .ng-untouched  {
+  border-color:red;
+}
+.ng-untouched,.ng-valid{
+  border-color: initial;
+}
+small{
+  display: block;
+  margin: 2px;
+}

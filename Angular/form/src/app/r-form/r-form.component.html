@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="heading text-center font-monospace"><h2>Reactive Form</h2></div>
+
+  <form [formGroup]="reactive" (ngSubmit)="onSubmit(reactive.value)">
+    <br>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="mail" [class.is-invalid] = "reactive.get('mail')?.invalid && reactive.get('mail')?.touched" class="form-control">
+      <div *ngIf="(reactive.controls.mail?.invalid && reactive.controls.mail?.touched) || reactive.dirty">
+        <small *ngIf="reactive.controls.mail.errors?.['required']" class="text-danger">Email is required</small>
+        <small *ngIf="reactive.controls.mail.errors?.['pattern']" class="text-danger">Please provide a valid email address</small>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" formControlName="pass" [class.is-invalid] = "reactive.get('pass')?.invalid && reactive.get('pass')?.touched" class="form-control">
+      <div *ngIf="(reactive.controls.pass?.invalid && reactive.controls.pass?.touched) || reactive.dirty">
+        <small *ngIf="reactive.controls.pass.errors?.['required']" class="text-danger">Password is required</small>
+        <small *ngIf="reactive.controls.pass.errors?.['minlength']" class="text-danger">Please write at-least 6 character</small>
+      </div>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-outline-secondary">Register</button>
+  </form>
+</div>

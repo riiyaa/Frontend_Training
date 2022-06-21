@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-3 col-xs-6" *ngFor="let student of students">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">{{ student.id }}</p>
+                    <p class="card-subtitle">{{ student.name }}</p>
+                    <p class="card-text">{{ student.enrollmentnumber }}</p>
+                    <p class="card-text">{{ student.university }}</p>
+                    <a class="btn btn-primary" href="#" >Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,13 +12,16 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="6">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="mat-button" />
             <item index="1" class="java.lang.String" itemvalue="cdkfocusinitial" />
             <item index="2" class="java.lang.String" itemvalue="{{animal}}" />
             <item index="3" class="java.lang.String" itemvalue="{{i}}" />
             <item index="4" class="java.lang.String" itemvalue="select(i)" />
             <item index="5" class="java.lang.String" itemvalue="mat-raised-button" />
+            <item index="6" class="java.lang.String" itemvalue="class.is-invalid" />
+            <item index="7" class="java.lang.String" itemvalue="routerlink" />
+            <item index="8" class="java.lang.String" itemvalue="sortactiondescription" />
           </list>
         </value>
       </option>
@@ -27,7 +30,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="12">
+          <list size="13">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -40,6 +43,7 @@
             <item index="9" class="java.lang.String" itemvalue="ejs-breadcrumb" />
             <item index="10" class="java.lang.String" itemvalue="xng-breadcrumb" />
             <item index="11" class="java.lang.String" itemvalue="app-breadcrumb" />
+            <item index="12" class="java.lang.String" itemvalue="app-modal" />
           </list>
         </value>
       </option>

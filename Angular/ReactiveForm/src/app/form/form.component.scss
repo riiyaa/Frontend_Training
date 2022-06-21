@@ -1,0 +1,81 @@
+h4{
+  color: darkred;
+}
+.form-group{
+  display: flex;
+}
+.form-control{
+  display: inline-block;
+  flex:2;
+}
+label{
+  text-align: left;
+  margin: 0 10px;
+  flex: 0.5;
+}
+.save{
+  width: 90px;
+  padding: 3px 5px;
+  margin: 10px 0;
+  border: 2px outset darkred;
+  border-radius: 5px;
+}
+.save:hover{
+  background-color: darkred ;
+  color: white;
+}
+small{
+  display: block;
+}
+form {
+  border: 1px solid slategray;
+  padding: 50px 30px 30px;
+  display: block;
+  width: 60%;
+  border-radius: 20px;
+  margin: 0 auto;
+  background-color:aliceblue;
+}
+.form-control:focus {
+  color: black;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  box-shadow: none;
+}
+.box-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+}
+
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.box.form-control{
+  margin: 0;
+  text-align: left;
+  border: none;
+  background-color: initial;
+}
+.error {
+  display: block;
+  width: 57%;
+  text-align: left;
+  margin: 0 auto;
+}

@@ -1,0 +1,22 @@
+button {
+  width: 100px;
+  margin: 0 20px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 2px outset floralwhite;
+  color: cornflowerblue;
+}
+button:hover{
+  background: #c6d8fa;
+  color: #706a6a;
+}
+.active{
+  background-color: #a7c1f0;
+  color: white;
+}
+.show{
+  margin: 30px 0;
+}
+h2{
+  padding-bottom: 20px;
+}
