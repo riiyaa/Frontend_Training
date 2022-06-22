@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from "@angular/material/sort";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatRadioModule} from "@angular/material/radio";
+import { FilePickerModule } from  'ngx-awesome-uploader';
 // import {MatTableModule} from "@angular/material/table";
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -35,7 +36,8 @@ import {MatRadioModule} from "@angular/material/radio";
     BrowserAnimationsModule,
     MatSortModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    FilePickerModule
   ],
   providers: [CustomPreloadingService],
   bootstrap: [AppComponent]

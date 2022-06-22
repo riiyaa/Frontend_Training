@@ -1,26 +1,4 @@
-<div class="container" @slideInOut>
-<!--  <table class="table table-striped">-->
-<!--    <thead class="thead thead-dark">-->
-<!--    <tr>-->
-<!--      <th scope="col">#</th>-->
-<!--      <th scope="col">First Name</th>-->
-<!--      <th scope="col">Last Name</th>-->
-<!--      <th scope="col">Email</th>-->
-<!--      <th scope="col">Zip Code</th>-->
-<!--      <th scope="col">Gender</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody *ngFor="let item of data; let i=index">-->
-<!--        <tr>-->
-<!--          <th scope="row">{{i}}</th>-->
-<!--          <td>{{item.fName}}</td>-->
-<!--          <td>{{item.lName}}</td>-->
-<!--          <td>{{item.email}}</td>-->
-<!--          <td>{{item.zip}}</td>-->
-<!--          <td>{{item.gender}}</td>-->
-<!--        </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
+<div class="container">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  matSort (matSortChange)="announceSortChange($event)">
 
     <!-- Position Column -->

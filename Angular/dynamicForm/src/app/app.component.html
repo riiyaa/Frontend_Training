@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="heading text-center font-monospace"><h2>Reactive Form</h2></div>
+
+  <form [formGroup]="reactive" (ngSubmit)="onSubmit(reactive.value)">
+    <br>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="mail" [class.is-invalid] = "reactive.get('mail')?.invalid && reactive.get('mail')?.touched" class="form-control">
+      <div *ngIf="(reactive.controls.mail?.invalid && reactive.controls.mail?.touched) || reactive.dirty">
+        <small *ngIf="reactive.controls.mail.errors?.['required']" class="text-danger">Email is required</small>
+        <small *ngIf="reactive.controls.mail.errors?.['pattern']" class="text-danger">Please provide a valid email address</small>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" formControlName="pass" [class.is-invalid] = "reactive.get('pass')?.invalid && reactive.get('pass')?.touched" class="form-control">
+      <div *ngIf="(reactive.controls.pass?.invalid && reactive.controls.pass?.touched) || reactive.dirty">
+        <small *ngIf="reactive.controls.pass.errors?.['required']" class="text-danger">Password is required</small>
+        <small *ngIf="reactive.controls.pass.errors?.['minlength']" class="text-danger">Please write at-least 6 character</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 table-responsive" formArrayName="itemRows">
+        <table class="table">
+          <thead>
+          <tr>
+            <th ><span class="required-field"></span>Time Range </th>
+            <th >Learn </th>
+            <th >Descripition </th>
+            <th >Suggestion</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let itemrow of reactive.controls.itemRows['controls']; let i=index"  [formGroupName]="i">
+
+            <td style="white-space: nowrap;"> <input  id="timeRange{{i}}" formControlName="timeRange" class="form-control"></td>
+            <!-- <td style="white-space: nowrap;"> <input readonly id="learn{{i}}" formControlName="learn" class="form-control"></td> -->
+            <!-- <td> <input formControlName="bf_stock" readonly id="bfStock{{i}}" class="form-control reset"></td> -->
+            <td> <textarea id="learn{{i}}" formControlName="learn" class="form-control reset"></textarea></td>
+            <td> <textarea formControlName="descripition" class="form-control reset"></textarea></td>
+            <td> <textarea formControlName="suggestion" class="form-control reset"></textarea></td>
+            <td> <button *ngIf="reactive.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger"> Delete</button></td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr><td> <button type="button" (click)="addNewRow()" class="btn btn-primary">Add Field</button></td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-outline-secondary">Register</button>
+  </form>
+</div>

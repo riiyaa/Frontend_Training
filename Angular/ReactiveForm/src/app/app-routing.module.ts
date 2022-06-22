@@ -8,9 +8,9 @@ import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {path:'',component:FormComponent},
-  {path:'form' , component:FormComponent, data: {preload: true}},
+  {path:'form' , component:FormComponent, data: {preload: true,state: 'form'}},
   {path:'login', component:LoginComponent},
-  {path:'details',canActivate:[AuthGuard],component:DetailsComponent}
+  {path:'details',canActivate:[AuthGuard],component:DetailsComponent,data: { state: 'details' }}
 ];
 
 @NgModule({

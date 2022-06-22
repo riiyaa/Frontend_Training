@@ -1,22 +1,15 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {animate, keyframes, style, transition, trigger} from "@angular/animations";
+import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-model',
   templateUrl: './model.component.html',
   styleUrls: ['./model.component.scss'],
-  animations:[
-    trigger('flip',[
-      transition('back => front', [
-        animate('1s 0s ease-in',
-          keyframes([
-            style({
-              transform: 'perspective(400px) rotateY(-180deg)',
-              offset: 0
-            }),
-          ])
-        )
-      ])
+  animations: [
+    trigger('dialog', [
+      state('true', style({ height: '*' })),
+      state('false', style({ height: '0px' })),
+      transition('false <=> true', animate(5000))
     ])
   ]
 })
@@ -34,6 +27,7 @@ export class ModelComponent implements OnInit {
     this.username = uname
     this.password = pass
     this.modal.nativeElement.style.display = 'block';
+
   }
 
   close() {
