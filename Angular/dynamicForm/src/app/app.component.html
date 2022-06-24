@@ -20,6 +20,14 @@
         <small *ngIf="reactive.controls.pass.errors?.['minlength']" class="text-danger">Please write at-least 6 character</small>
       </div>
     </div>
+    <div formGroupName="phoneNumber" class="form-group">
+      <h3>Mobile Numbers:</h3>
+      <label>Permanent Number:</label>
+      <input type="tel" formControlName="fNum" class="form-control">
+      <br>
+      <label>Temporary Number:</label>
+      <input type="tel" formControlName="sNum" class="form-control">
+    </div>
     <div class="row">
       <div class="col-sm-12 table-responsive" formArrayName="itemRows">
         <table class="table">
@@ -40,7 +48,8 @@
             <td> <textarea id="learn{{i}}" formControlName="learn" class="form-control reset"></textarea></td>
             <td> <textarea formControlName="descripition" class="form-control reset"></textarea></td>
             <td> <textarea formControlName="suggestion" class="form-control reset"></textarea></td>
-            <td> <button *ngIf="reactive.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger"> Delete</button></td>
+            <td> <button *ngIf="reactive.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger" type="button"> Delete</button></td>
+            <td> <button *ngIf="reactive.controls.itemRows.controls.length > 1" (click)="editRow(i)" class="btn btn-primary" type="button"> Edit</button></td>
           </tr>
           </tbody>
           <tfoot>
