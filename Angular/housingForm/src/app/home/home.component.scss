@@ -1,0 +1,31 @@
+button{
+  padding:5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+.box {
+  border:1px solid;
+  padding: 20px;
+  margin: 20px 0;
+  button{
+    margin: 10px 0;
+  }
+}
+label.radio-inline {
+  margin: 5px;
+}
+label.type{
+  margin: 10px;
+}
+.buttons .submit{
+  margin: 0 150px 0 0;
+}
+.small-box{
+  display: inline-block;
+  border:1px solid;
+  padding: 20px;
+  margin: 20px 10px;
+}
+.form-box{
+  margin: 30px 0;
+}

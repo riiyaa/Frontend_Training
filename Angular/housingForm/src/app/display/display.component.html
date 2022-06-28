@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="heading">
+    <h2>Display Housing Form Data</h2>
+  </div>
+  <div *ngIf="_service.array">
+    <div *ngFor="let item of $any(_service.array); let i=index">
+      <div class="main-block">
+        <span><strong>House No. {{i}}</strong></span>
+        <button class="btn-secondary" (click)="update(i)">Update</button>
+        <div class="box">
+          <span>House Name :</span>
+          <span>{{item.hName}}</span>
+        </div>
+        <div class="box">
+          <span>House Type :</span>
+          <span>{{item.hType}}</span>
+        </div>
+        <div class="box">
+          <span>House Id :</span>
+          <span>{{item.id}}</span>
+        </div>
+        <div *ngIf="item.addresses">
+          <div *ngFor="let address of item.addresses; let j=index">
+            <div class="block">
+              <span><strong>Address {{j}}</strong></span>
+              <div class="box">
+                <span>Plot No. :</span>
+                <span>{{address.plot}}</span>
+              </div>
+              <div class="box">
+                <span>Area :</span>
+                <span>{{address.area}}</span>
+              </div>
+              <div class="box">
+                <span>PinCode :</span>
+                <span>{{address.pin}}</span>
+              </div>
+              <div *ngIf="address.person">
+                <div *ngFor="let list of address.person; let k=index">
+                  <div class="block">
+                    <span><strong>Person {{k}}</strong></span>
+                    <div class="block">
+                      <div class="box">
+                        <span>Name :</span>
+                        <span>{{list.fName}}</span>
+                      </div>
+                      <div class="box">
+                        <span>Age :</span>
+                        <span>{{list.age}}</span>
+                      </div>
+                      <div class="box">
+                        <span>Gender :</span>
+                        <span>{{list.gender}}</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

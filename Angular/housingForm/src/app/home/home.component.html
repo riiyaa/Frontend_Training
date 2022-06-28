@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="form-box" >
+    <div *ngIf="_service.isShow">
+      <form [formGroup]="housingForm">
+        <div formArrayName="details">
+          <div *ngFor="let item of details().controls; let mainIndex=index" class="box">
+            <div [formGroupName]="mainIndex" class="addHouse">
+              <div class="form-group">
+                <label>House Name :</label>
+                <input type="text" formControlName="hName" class="form-control" [ngClass]="{'is-invalid':item.get('hName')?.invalid && item.get('hName')?.touched}" >
+                  <div *ngIf="(item.get('hName')?.invalid && item.get('hName')?.touched)">
+                    <small *ngIf="item.get('hName')?.errors?.['required']" class="text-danger">House Name is required</small>
+                  </div>
+              </div>
+              <div>
+                <label class="type">House Type : </label>
+                <label class="radio-inline">
+                  <input type="radio" value="small" formControlName="hType" class="radio">
+                  Small
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" value="medium" formControlName="hType" class="radio">
+                  Medium
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" value="large" formControlName="hType" class="radio">
+                  Large
+                </label>
+              </div>
+              <button (click)="addAddress(mainIndex)" class="btn-primary">Add Address</button>
+              <div formArrayName="addresses">
+                <div *ngFor="let add of address(mainIndex).controls; let addIndex=index" class="box">
+                  <div [formGroupName]="addIndex">
+                    <div class="form-group">
+                      <label>Plot No :</label>
+                      <input type="text" formControlName="plot" class="form-control" [ngClass]="{'is-invalid':add.get('plot')?.invalid && add.get('plot')?.touched}">
+                      <div *ngIf="(add.get('plot')?.invalid && add.get('plot')?.touched)">
+                        <small *ngIf="add.get('plot')?.errors?.['required']" class="text-danger">Plot no is required</small>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Area :</label>
+                      <input type="text" formControlName="area" class="form-control" [ngClass]="{'is-invalid':add.get('area')?.invalid && add.get('area')?.touched}">
+                      <div *ngIf="(add.get('area')?.invalid && add.get('area')?.touched)">
+                        <small *ngIf="add.get('area')?.errors?.['required']" class="text-danger">Area is required</small>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Pin code :</label>
+                      <input type="text" formControlName="pin" class="form-control" [ngClass]="{'is-invalid':add.get('pin')?.invalid && add.get('pin')?.touched}">
+                      <div *ngIf="(add.get('pin')?.invalid && add.get('pin')?.touched)">
+                        <small *ngIf="add.get('pin')?.errors?.['required']" class="text-danger">PinCode is required</small>
+                        <small *ngIf="add.get('pin')?.errors?.['pattern']" class="text-danger">Enter valid pinCode</small>
+                      </div>
+                    </div>
+                    <div>
+                      <button type="button" (click)="addPerson(addIndex,mainIndex)" class="btn-primary">Add person</button>
+                      <div formArrayName="person">
+                        <div *ngFor="let list of persons(addIndex,mainIndex).controls; let personIndex=index" class="small-box">
+                          <div [formGroupName]="personIndex">
+                            <div class="form-group">
+                              <label>Name :</label>
+                              <input class="form-control" formControlName="fName" type="text" [ngClass]="{'is-invalid':list.get('fName')?.invalid && list.get('fName')?.touched}">
+                              <div *ngIf="(list.get('fName')?.invalid && list.get('fName')?.touched)">
+                                <small *ngIf="list.get('fName')?.errors?.['required']" class="text-danger">Person Name is required</small>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Age :</label>
+                              <input class="form-control" formControlName="age" type="number" [ngClass]="{'is-invalid':list.get('age')?.invalid && list.get('age')?.touched}">
+                              <div *ngIf="(list.get('age')?.invalid && list.get('age')?.touched)">
+                                <small *ngIf="list.get('age')?.errors?.['required']" class="text-danger">Age is required</small>
+                              </div>
+                            </div>
+                            <div>
+                              <label class="type">Gender : </label>
+                              <label class="radio-inline">
+                                <input type="radio" value="male" formControlName="gender" class="radio">
+                                Male
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" value="female" formControlName="gender" class="radio">
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div>
+              </div>
+              <div class="buttons">
+                <button type="button" (click)="onSubmit(mainIndex)" class="btn-info submit">Submit</button>
+                <button type="button" (click)="removeEmployee(mainIndex)" class="btn-danger remove">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button type="button" class="btn-success" (click)="addMore()">Add More House</button>
+
+
+  </div>
+</div>

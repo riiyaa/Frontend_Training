@@ -5,7 +5,7 @@
     <br>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" formControlName="mail" [class.is-invalid] = "reactive.get('mail')?.invalid && reactive.get('mail')?.touched" class="form-control">
+      <input type="email" formControlName="mail"  [class.is-invalid] = "reactive.get('mail')?.invalid && reactive.get('mail')?.touched" class="form-control">
       <div *ngIf="(reactive.controls.mail?.invalid && reactive.controls.mail?.touched) || reactive.dirty">
         <small *ngIf="reactive.controls.mail.errors?.['required']" class="text-danger">Email is required</small>
         <small *ngIf="reactive.controls.mail.errors?.['pattern']" class="text-danger">Please provide a valid email address</small>
