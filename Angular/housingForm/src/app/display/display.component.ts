@@ -20,4 +20,9 @@ export class DisplayComponent implements OnInit {
     this.router.navigateByUrl('/home');
     this._service.arrayIndex = i
   }
+
+  delete(i: any) {
+    this._service.array.splice(i,1);
+    localStorage.setItem('Details',JSON.stringify(this._service.array))
+  }
 }

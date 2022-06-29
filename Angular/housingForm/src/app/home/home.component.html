@@ -54,7 +54,10 @@
                       </div>
                     </div>
                     <div>
-                      <button type="button" (click)="addPerson(addIndex,mainIndex)" class="btn-primary">Add person</button>
+                      <div class="button">
+                        <button type="button" (click)="deleteAddress(addIndex,mainIndex)" class="btn-danger">Delete Address</button>
+                        <button type="button" (click)="addPerson(addIndex,mainIndex)" class="btn-primary">Add person</button>
+                      </div>
                       <div formArrayName="person">
                         <div *ngFor="let list of persons(addIndex,mainIndex).controls; let personIndex=index" class="small-box">
                           <div [formGroupName]="personIndex">
@@ -82,6 +85,9 @@
                                 <input type="radio" value="female" formControlName="gender" class="radio">
                                 Female
                               </label>
+                            </div>
+                            <div>
+                              <button class="btn-danger" (click)="deletePerson(addIndex,mainIndex,personIndex)">Delete person</button>
                             </div>
                           </div>
                         </div>

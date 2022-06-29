@@ -139,4 +139,12 @@ export class HomeComponent implements OnInit {
       })
     }
   }
+
+  deletePerson(addIndex: any, mainIndex: any,personIndex:any) {
+    this.persons(addIndex,mainIndex).removeAt(personIndex);
   }
+
+  deleteAddress(addIndex: number, mainIndex: number) {
+    this.address(mainIndex).removeAt(addIndex)
+  }
+}

@@ -2,11 +2,12 @@
   <div class="heading">
     <h2>Display Housing Form Data</h2>
   </div>
-  <div *ngIf="_service.array">
-    <div *ngFor="let item of $any(_service.array); let i=index">
+  <div *ngIf="_service.array" class="scroll">
+    <div *ngFor="let item of $any(_service.array); let i=index" >
       <div class="main-block">
         <span><strong>House No. {{i}}</strong></span>
         <button class="btn-secondary" (click)="update(i)">Update</button>
+        <button class="btn-danger del" (click)="delete(i)">Delete</button>
         <div class="box">
           <span>House Name :</span>
           <span>{{item.hName}}</span>
