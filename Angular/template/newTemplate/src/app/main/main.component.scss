@@ -1,0 +1,14 @@
+.dropdown-menu,.collapse{
+  display: block;
+}
+.back {
+  position: absolute;
+  top: 5%;
+  left: 37.5%;
+  padding: 10px;
+  button{
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+  }
+}

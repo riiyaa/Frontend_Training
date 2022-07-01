@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <ng-content></ng-content>
+      <p #head>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet est ex ipsam magnam repellendus! Atque delectus expedita fuga fugit in non! Fugiat obcaecati officia quod sed. Eligendi pariatur quis sed? Autem culpa doloremque doloribus eius enim, et eum excepturi harum impedit odio placeat possimus quam quas sequi unde! Consectetur, quod?</p>
+      <ng-content select=".btn"></ng-content>
+
+    </div>
+  </div>
+  <div>
+    <p>{{child?.counter}}</p>
+    <button (click)="inc()">Increment</button>
+    <button (click)="decre()">Decrement</button>
+  </div>
+  <app-test-child #counterChild></app-test-child>
+</div>
+
