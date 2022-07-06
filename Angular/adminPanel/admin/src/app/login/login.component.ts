@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "../app.service";
+import { ToastrService } from 'ngx-toastr';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toast : ToastrService,private route: Router) { }
 
   ngOnInit(): void {
   }
 
+  showSuccess(){
+    this.toast.success("You are logIn successfully");
+    this.route.navigateByUrl('')
+  }
+
+  click() {
+    this.showSuccess()
+  }
 }

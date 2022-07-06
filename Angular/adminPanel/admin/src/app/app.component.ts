@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {AppService} from "./app.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import {AppService} from "./app.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public _service : AppService,private route:Router) {
+  constructor(public _service : AppService,private route:Router,public toast: ToastrService) {
   }
   title = 'admin';
   componentShow = false
@@ -61,11 +62,16 @@ export class AppComponent {
   }
 
   login() {
-    this._service.logged = true
+
   }
 
   back() {
     this._service.logged = false
     this.route.navigateByUrl('')
+  }
+  loginDashboard() {
+    this.toast.success("Hello! You are successfully login")
+    this._service.login("You are successfully login")
+    // this.route.navigateByUrl('')
   }
 }

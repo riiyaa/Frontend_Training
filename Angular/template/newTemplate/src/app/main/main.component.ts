@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
   tableShow = false
   loginShow = false
   showLogin = false
+  navShow = false
 
   ngOnInit(): void {
   }
@@ -69,4 +70,5 @@ export class MainComponent implements OnInit {
     this.showLogin = false
     this.route.navigateByUrl('home')
   }
+
 }
