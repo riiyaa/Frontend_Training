@@ -9,14 +9,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+mess = "You are logIn successfully"
   constructor(private toast : ToastrService,private route: Router) { }
 
   ngOnInit(): void {
   }
 
   showSuccess(){
-    this.toast.success("You are logIn successfully");
+    this.toast.success(this.mess);
     this.route.navigateByUrl('')
   }
 
