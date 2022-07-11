@@ -7,7 +7,10 @@ import {HttpClient} from "@angular/common/http";
 export class AppService {
 
   constructor(private http: HttpClient) { }
-  url = 'https://jsonplaceholder.typicode.com/comments'
-  get = this.http.get(this.url)
+  url = 'https://jsonplaceholder.typicode.com/posts'
+  get = this.http.get(this.url);
+  post(data:any){
+    return this.http.post(this.url,data)
+  }
 
 }

@@ -1,0 +1,11 @@
+<div class="container">
+  <form [formGroup]="userDetails" (ngSubmit)="save(userDetails.value)">
+    <input type="number" formControlName="userId" >
+    <br>
+    <input type="text" formControlName="title">
+    <br>
+    <input type="text" formControlName="body">
+    <br>
+    <button>Add Title</button>
+  </form>
+</div>
