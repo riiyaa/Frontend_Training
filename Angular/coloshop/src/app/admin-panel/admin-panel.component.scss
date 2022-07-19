@@ -8,3 +8,48 @@
 a{
   cursor: pointer;
 }
+.product-item{
+  float: left;
+}
+.row{
+  padding: 30px;
+}
+.red_button {
+  display: inline-block;
+  width: 35%;
+  height: 36px;
+  margin: 0 14px;
+  a{
+    color: white;
+  }
+}
+.blue_button {
+  display: inline-block;
+  width: 35%;
+  height: 36px;
+  background: #4673d7;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  margin: 0 14px;
+  a{
+    display: block;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    color: white;
+  }
+}
+.blue_button:hover{
+  background: #7a93ed;
+}
+.product {
+  height: 335px;
+}
+.add{
+  top: 50%;
+  left: 15%;
+}

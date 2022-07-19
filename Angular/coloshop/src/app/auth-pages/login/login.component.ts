@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
-import {animate, keyframes, style, transition, trigger} from "@angular/animations";
 import {AuthServiceService} from "../../core/services/auth-service/auth-service.service";
 
 @Component({

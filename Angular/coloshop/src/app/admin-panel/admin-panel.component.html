@@ -82,7 +82,7 @@
         <div *ngIf="pageShow" id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" (click)="login()" routerLink="">Login</a>
+            <a class="collapse-item" routerLink="">Login</a>
             <a class="collapse-item" >Register</a>
             <a class="collapse-item" >Forgot Password</a>
             <div class="collapse-divider"></div>
@@ -335,7 +335,35 @@
         <br>
 
       </div>
-      <app-products></app-products>
+      <div class="row">
+        <div class="col">
+          <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div *ngFor="let item  of products; let i=index">
+              <div class="product-item">
+                <div class="product discount product_filter">
+                  <div class="product_image">
+                    <img [src]="item.image" alt="">
+                  </div>
+                  <div class="favorite" [ngClass]="{'favorite_left':item.saleProduct != ''}"></div>
+                  <div class="product_bubble d-flex flex-column align-items-center" [ngClass]="{'product_bubble_right product_bubble_red ':item.saleProduct != '','product_bubble_left product_bubble_green':item.newProduct}"><span *ngIf="item.newProduct">new</span><span *ngIf="!item.newProduct">{{item.saleProduct}}</span></div>
+                  <div class="product_info">
+                    <h6 class="product_name"><a>{{item.title}}</a></h6>
+                    <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice != 0">${{item.discountPrice}}</span></div>
+                  </div>
+                </div>
+                <div class="red_button" (click)="delete(i,item.id)"><a>Delete</a></div>
+                <div class="blue_button" (click)="edit(item.id)"><a>Edit</a></div>
+              </div>
+
+            </div>
+            <div class="product-item position-relative">
+              <button class="btn btn-danger position-absolute add" (click)="addProduct()">Add Products</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {HeaderService} from "../core/services/header.service";
+import {HttpClient, HttpParams} from "@angular/common/http";
+import {Router} from "@angular/router";
+
+
 
 @Component({
   selector: 'app-admin-panel',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _appService: HeaderService , public http : HttpClient, public route: Router) { }
+
+  products:any = []
 
   ngOnInit(): void {
+    this._appService.getUrl.subscribe((data:any)=> {
+      this.products = data
+      console.log(this.products)
+    });
+    // console.log(this.products,"fcdfdf")
   }
   componentShow = false
   utilityShow = false
@@ -61,8 +73,24 @@ export class AdminPanelComponent implements OnInit {
     this.status = ! this.status
   }
 
-  login() {
-
+  delete(index:any,id:any) {
+    this.products.splice(index, 1);
+    this._appService.deleteItem(id)
+      .subscribe(response => {
+        this.products = this.products.filter((item:any) => item.id !== id);
+      });
   }
 
+  edit(index:any) {
+    this.route.navigate(['details',index]);
+  }
+
+  addProduct() {
+    // this.route.navigate(['addDetails']);
+      this._appService.add().subscribe((result:any)=>{
+        this.ngOnInit()
+        this.edit(result.id)
+      })
+
+  }
 }

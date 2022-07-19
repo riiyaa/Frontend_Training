@@ -8,7 +8,7 @@ const routes: Routes = [
   // {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent,data:{breadcrumb: 'Home'}},
   {path:'home/:id',component:HomeChildComponent,data:{breadcrumb: 'HomeId'}},
-  {path:'about',component:AboutComponent,data:{breadcrumb: 'About'}}
+  {path:'about',component:AboutComponent,data:{breadcrumb: 'About'}},
 ];
 
 @NgModule({

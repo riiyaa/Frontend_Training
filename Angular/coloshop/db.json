@@ -1,106 +1,177 @@
 {
   "Data": [
     {
-      "id": 0,
-      "title": "Fujifilm X100T 16 MP Digital Camera (Silver)",
-      "images": "assets/images/product_1.png",
-      "price": 520.00,
-      "discountPrice": 590.00,
-      "newProduct": false,
-      "saleProduct": "-$20",
-      "favourites": false,
-      "filter": ["all","men"]
-    },
-    {
       "id": 1,
-      "title": "Samsung CF591 Series Curved 27-Inch FHD Monitor",
-      "images": "assets/images/product_2.png",
-      "price": 610.00,
-      "newProduct": true,
-      "saleProduct": "",
+      "newProduct": false,
+      "saleProduct": "20",
       "favourites": false,
-      "filter": ["all","women"]
+      "image": "assets/images/product_1.png",
+      "title": "Fujifilm X100T 16 MP Digital Camera (Silver)",
+      "discountPrice": "590",
+      "price": 420,
+      "filter": [
+        "men"
+      ]
     },
     {
       "id": 2,
-      "title": "Blue Yeti USB Microphone Blackout Edition",
-      "images": "assets/images/product_3.png",
-      "price": 120.00,
-      "newProduct": false,
-      "saleProduct": "",
-      "favourites": false,
-      "filter": ["all","women"]
-    },
-    {
-      "id": 3,
-      "title": "DYMO LabelWriter 450 Turbo Thermal Label Printer",
-      "images": "assets/images/product_4.png",
-      "price": 410.00,
-      "newProduct": false,
-      "saleProduct": "SALE",
-      "favourites": false,
-      "filter": ["all","accessories"]
-    },
-    {
-      "id": 4,
-      "title": "Pryma Headphones, Rose Gold & Grey",
-      "images": "assets/images/product_5.png",
-      "price": 180.00,
-      "newProduct": false,
-      "saleProduct": "",
-      "favourites": false,
-      "filter": ["all","women","men"]
-    },
-    {
-      "id": 5,
-      "title": "Fujifilm X100T 16 MP Digital Camera (Silver)",
-      "images": "assets/images/product_6.png",
-      "price": 520.00,
-      "discountPrice": 590.00,
-      "newProduct": false,
-      "saleProduct": "-$20",
-      "favourites": false,
-      "filter": ["all","accessories"]
-    },
-    {
-      "id": 6,
-      "title": "Samsung CF591 Series Curved 27-Inch FHD Monitor",
-      "images": "assets/images/product_7.png",
-      "price": 610.00,
       "newProduct": true,
       "saleProduct": "",
       "favourites": false,
-      "filter": ["all","women"]
+      "image": "assets/images/product_2.png",
+      "title": "Helloooooooooooooooo",
+      "discountPrice": "444",
+      "price": 610,
+      "filter": [
+        "women",
+        "accessories",
+        "men"
+      ]
+    },
+    {
+      "id": 3,
+      "newProduct": false,
+      "saleProduct": "sale",
+      "favourites": false,
+      "image": "assets/images/product_3.png",
+      "title": "Blue Yeti USB Microphone Blackout Edition",
+      "discountPrice": "",
+      "price": 120,
+      "filter": [
+        "women"
+      ]
+    },
+    {
+      "id": 4,
+      "newProduct": false,
+      "saleProduct": "sale",
+      "favourites": false,
+      "image": "assets/images/product_4.png",
+      "title": "DYMO LabelWriter 450 Turbo Thermal Label Printer",
+      "discountPrice": "",
+      "price": 410,
+      "filter": [
+        "accessories"
+      ]
+    },
+    {
+      "id": 5,
+      "newProduct": false,
+      "saleProduct": "",
+      "favourites": false,
+      "image": "assets/images/product_5.png",
+      "title": "Pryma Headphones, Rose Gold & Grey",
+      "discountPrice": "",
+      "price": 180,
+      "filter": [
+        "men"
+      ]
+    },
+    {
+      "id": 6,
+      "newProduct": true,
+      "saleProduct": "56",
+      "favourites": false,
+      "image": "assets/images/product_6.png",
+      "title": "Fujifilm X100T 16 MP Digital Camera (Silver)",
+      "discountPrice": "",
+      "price": 655,
+      "filter": [
+        "accessories"
+      ]
     },
     {
       "id": 7,
-      "title": "Blue Yeti USB Microphone Blackout Edition",
-      "images": "assets/images/product_8.png",
-      "price": 120.00,
-      "newProduct": false,
+      "newProduct": true,
       "saleProduct": "",
       "favourites": false,
-      "filter": ["all","accessories"]
+      "image": "assets/images/product_7.png",
+      "title": "Samsung CF591 Series Curved 27-Inch FHD Monitor",
+      "discountPrice": "",
+      "price": 610,
+      "filter": [
+        "women"
+      ]
     },
     {
       "id": 8,
-      "title": "DYMO LabelWriter 450 Turbo Thermal Label Printer",
-      "images": "assets/images/product_9.png",
-      "price": 410.00,
       "newProduct": false,
-      "saleProduct": "SALE",
+      "saleProduct": "sale",
       "favourites": false,
-      "filter": ["all","men"]
+      "image": "assets/images/product_8.png",
+      "title": "Blue Yeti USB Microphone Blackout Edition",
+      "discountPrice": "",
+      "price": 120,
+      "filter": [
+        "women"
+      ]
     },
     {
       "id": 9,
-      "title": "Pryma Headphones, Rose Gold & Grey",
-      "images": "assets/images/product_10.png",
-      "price": 180.00,
+      "newProduct": false,
+      "saleProduct": "sale",
+      "favourites": false,
+      "image": "assets/images/product_9.png",
+      "title": "DYMO LabelWriter 450 Turbo Thermal Label Printer",
+      "discountPrice": "",
+      "price": 410,
+      "filter": [
+        "men"
+      ]
+    },
+    {
+      "id": 10,
       "newProduct": false,
       "saleProduct": "",
       "favourites": false,
-      "filter": ["all","men"]
+      "image": "assets/images/product_10.png",
+      "title": "Pryma Headphones, Rose Gold & Grey",
+      "discountPrice": "",
+      "price": 180,
+      "filter": [
+        "men"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "bgdftyhtjkumikmimk",
+      "image": "assets/images/product_4.png",
+      "price": 6667,
+      "discountPrice": "67",
+      "newProduct": true,
+      "saleProduct": "66",
+      "favourites": false,
+      "filter": [
+        "men",
+        "women"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "fvxcvgfxdgb",
+      "image": "assets/images/product_4.png",
+      "price": 7657,
+      "discountPrice": 66,
+      "newProduct": false,
+      "saleProduct": "sale",
+      "favourites": false,
+      "filter": [
+        "men",
+        "accessories"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Hello there  ........",
+      "image": "assets/images/product_4.png",
+      "price": 675000,
+      "discountPrice": 6666,
+      "newProduct": false,
+      "saleProduct": "56",
+      "favourites": false,
+      "filter": [
+        "women"
+      ]
     }
   ]
 }

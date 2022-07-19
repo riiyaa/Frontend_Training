@@ -1,0 +1,57 @@
+<p>product-details works!</p>
+<div class="container">
+  <h2 class="text cred text-center">Edit your {{products[itemId]?.title}}</h2>
+  <br>
+
+<!--  <form class="text-center" >-->
+
+  <div class="form-group">
+    <label>Title :</label>
+    <input class="form-control" [(ngModel)]="loginForm.editTitle"  type="text" placeholder="Enter Product Name">
+  </div>
+  <div class="form-group">
+    <label>Your Product Image :</label>
+    <input class="form-control" [(ngModel)]="loginForm.image"  type="text" disabled>
+  </div>
+  <div class="form-group">
+    <label>Your Product Price :</label>
+    <input class="form-control" [(ngModel)]="loginForm.price"  type="number" placeholder="Enter your product price">
+  </div>
+  <div class="form-group">
+    <label>Your Product Discount Price :</label>
+    <input class="form-control" [(ngModel)]="loginForm.discount"  type="number" >
+  </div>
+  <div class="form-group">
+    <label>Your Product is New :&nbsp;</label>
+      <label class="radio-inline">
+        <input type="text" placeholder="Write true or false" class="radio" name="new" [(ngModel)]="loginForm.newP">
+      </label>
+  </div>
+  <div class="form-group">
+    <label>Your Product Sale Price :&nbsp;</label>
+    <label class="radio-inline">
+      <input type="text" placeholder="Write sale or price" class="radio" name="new" [(ngModel)]="loginForm.sale">
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Select Product Category :&nbsp;</label>
+    <br>
+    <input type="checkbox" id="category_men" name="category1" value="men"
+           [checked]="products[index]?.filter?.includes('men')"
+           (click)="onChange($event.target)">
+    <label for="category_men">&nbsp; men</label><br>
+    <input type="checkbox" id="category_women" name="category2" value="women"
+           [checked]="products[index]?.filter?.includes('women')"
+           (click)="onChange($event.target)">
+    <label for="category_women">&nbsp; women</label><br>
+    <input type="checkbox" id="category_accessories" name="category3" value="accessories"
+           [checked]="products[index]?.filter?.includes('accessories')"
+           (click)="onChange($event.target)">
+    <label for="category_accessories">&nbsp; accessories</label><br>
+  </div>
+  <br>
+  <button (click)="saveDetails()" class="btn btn-success">Save Details</button>
+<!--  </form>-->
+
+</div>
+

@@ -120,13 +120,13 @@
                 <ng-template carouselSlide class="product-item">
                   <div class="product-item product discount ">
                     <div class="product_image">
-                      <img [src]="item.images" alt="">
+                      <img [src]="item.image" alt="">
                     </div>
                     <div class="favorite" [ngClass]="{'favorite_left':item.saleProduct != ''}"></div>
                     <div class="product_bubble d-flex flex-column align-items-center"  [ngClass]="{'product_bubble_right product_bubble_red ':item.saleProduct != '','product_bubble_left product_bubble_green':item.newProduct}"><span *ngIf="item.newProduct">new</span><span *ngIf="!item.newProduct">{{item.saleProduct}}</span></div>
                     <div class="product_info">
                       <h6 class="product_name"><a>{{item.title}}</a></h6>
-                      <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice">${{item.discountPrice}}</span></div>
+                      <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice != 0">${{item.discountPrice}}</span></div>
                     </div>
                   </div>
                 </ng-template>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HeaderService} from "../../core/services/header.service";
-import {transition, trigger, useAnimation} from "@angular/animations";
+import {animate, transition, trigger, useAnimation} from "@angular/animations";
 import { zoomIn } from 'ng-animate';
 
 @Component({
@@ -10,6 +10,7 @@ import { zoomIn } from 'ng-animate';
   animations:[
       trigger('myAnimation',[
         transition('void => *', useAnimation(zoomIn, {
+          delay:1
         }))
       ])
   ]
@@ -34,7 +35,12 @@ export class ProductsComponent implements OnInit {
   }
 
   selected(type: any) {
-    if(this.product.filter((i:any)=>i.filter.includes(type))){
+    this.getProduct()
+    if(type=='all'){
+      this.data = this.product
+      this.isSelected = 'all'
+    }
+    else if(this.product.filter((i:any)=>i.filter.includes(type))){
       this.data = this.product.filter((i:any)=>i.filter.includes(type))
       this.isSelected = type
     }
