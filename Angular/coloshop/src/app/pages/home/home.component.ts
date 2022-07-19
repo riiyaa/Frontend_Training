@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {HeaderService} from "../../core/header.service";
+import {HeaderService} from "../../core/services/header.service";
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
@@ -8,28 +8,45 @@ import {HeaderService} from "../../core/header.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  interval:any ;
+  day:any = '03';
+  hour:any = '15';
+  min:any = '45';
+  sec:any = '25'
   data:any = []
-  product:any = []
-  isSelected = 'all'
-  constructor(public _service: HeaderService) { }
 
-  ngOnInit(): void {
+  constructor(public _service:HeaderService) {
+  }
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    nav: true,
+    navText: [ '<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>' ],
+    items:5
+  }
+  ngOnInit() {
+    this.interval = setInterval(() => {
+      this.sec--;
+      if (this.sec == 0) {
+        this.sec = '60'
+        this.min--;
+        if (this.min == 0) {
+          this.min = '60'
+          this.hour--;
+          if (this.hour == 0) {
+            clearInterval(this.interval)
+          }
+        }
+      }
+    }, 1000);
     this._service.getUrl.subscribe((data:any)=> {
       this.data = data
-    })
-      this.getProduct()
-  }
-  getProduct(){
-    this._service.getUrl.subscribe((data:any)=> {
-      this.product = data
-    })
+    });
+
   }
 
-  selected(type: any) {
-    if(this.product.filter((i:any)=>i.filter.includes(type))){
-        this.data = this.product.filter((i:any)=>i.filter.includes(type))
-        this.isSelected = type
-    }
-  }
 }

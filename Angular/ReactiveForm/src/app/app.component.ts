@@ -10,18 +10,18 @@ import { animations, buildRouteTransition } from "ngx-animations";
   animations: [
     trigger('routerTransition', [
       //First----------------------------------------------------------------
-      transition('* <=> *', [
-        query(':enter, :leave', style({ position: 'fixed', width:'100%' })),
-        group([
-          query(':enter', [
-            style({ transform: 'translateX(100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-          ]),
-          query(':leave', [
-            style({ transform: 'translateX(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))]),
-        ])
-      ])
+      // transition('* <=> *', [
+      //   query(':enter, :leave', style({ position: 'fixed', width:'100%' })),
+      //   group([
+      //     query(':enter', [
+      //       style({ transform: 'translateX(100%)' }),
+      //       animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+      //     ]),
+      //     query(':leave', [
+      //       style({ transform: 'translateX(0%)' }),
+      //       animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))]),
+      //   ])
+      // ])
       //Second -----------------------------------------------------------------------------
       // transition('* <=> *', [
       //     query(':enter, :leave', [
@@ -85,16 +85,16 @@ import { animations, buildRouteTransition } from "ngx-animations";
       //Fifth -------------------------------------------------------------------------
       // transition('* => *', useAnimation(rotateCubeToLeft))
       //Sixth----------------------------------------------------------------------------
-      // buildRouteTransition({
-      //   stateChangeExpr: "form => details",
-      //   enter: animations.zoomInRight(500),
-      //   leave: animations.zoomOutLeft(200)
-      // }),
-      // buildRouteTransition({
-      //   stateChangeExpr: "details => form",
-      //   enter: animations.zoomInLeft(500),
-      //   leave: animations.zoomOutRight(200)
-      // })
+      buildRouteTransition({
+        stateChangeExpr: "form => details",
+        enter: animations.zoomInRight(500),
+        leave: animations.zoomOutLeft(200)
+      }),
+      buildRouteTransition({
+        stateChangeExpr: "details => form",
+        enter: animations.zoomInLeft(500),
+        leave: animations.zoomOutRight(200)
+      })
     ])
   ],
 })

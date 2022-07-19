@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/styles/sb-admin-2.min.css";
 @import "assets/styles/bootstrap4/bootstrap.min.css";
 @import "assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css";
 @import "assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css";
@@ -10,3 +11,18 @@
 //@import "assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css";
 @import "assets/styles/contact_styles.css";
 @import "assets/styles/contact_responsive.css";
+
+.position-fixed{
+  position: fixed;
+}
+.position-sticky{
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+.position-relative{
+  position: relative;
+}
+.position-absolute{
+  position: absolute;
+}

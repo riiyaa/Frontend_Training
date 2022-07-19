@@ -1,4 +1,3 @@
-
 <!-- Slider -->
 
 <div class="main_slider" style="background-image:url(assets/images/slider_1.jpg)">
@@ -56,42 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-center">
-      <div class="col text-center">
-        <div class="new_arrivals_sorting">
-          <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'all'}" (click)="selected('all')">all</li>
-            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'women'}" (click)="selected('women')">women's</li>
-            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'accessories'}" (click)="selected('accessories')">accessories</li>
-            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'men'}" (click)="selected('men')">men's</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="product-grid" >
-
-          <!-- Product 1 -->
-          <div *ngFor="let item  of data">
-            <div class="product-item">
-              <div class="product discount product_filter">
-                <div class="product_image">
-                  <img [src]="item.images" alt="">
-                </div>
-                  <div class="favorite" [ngClass]="{'favorite_left':item.saleProduct != ''}"></div>
-                  <div class="product_bubble d-flex flex-column align-items-center" [ngClass]="{'product_bubble_right product_bubble_red ':item.saleProduct != '','product_bubble_left product_bubble_green':item.newProduct}"><span *ngIf="item.newProduct">new</span><span *ngIf="!item.newProduct">{{item.saleProduct}}</span></div>
-                <div class="product_info">
-                  <h6 class="product_name"><a>{{item.title}}</a></h6>
-                  <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice">${{item.discountPrice}}</span></div>
-                </div>
-              </div>
-              <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-products></app-products>
   </div>
 </div>
 
@@ -112,19 +76,19 @@
           </div>
           <ul class="timer">
             <li class="d-inline-flex flex-column justify-content-center align-items-center">
-              <div id="day" class="timer_num">03</div>
+              <div id="day" class="timer_num">{{day}}</div>
               <div class="timer_unit">Day</div>
             </li>
             <li class="d-inline-flex flex-column justify-content-center align-items-center">
-              <div id="hour" class="timer_num">15</div>
+              <div id="hour" class="timer_num">{{hour}}</div>
               <div class="timer_unit">Hours</div>
             </li>
             <li class="d-inline-flex flex-column justify-content-center align-items-center">
-              <div id="minute" class="timer_num">45</div>
+              <div id="minute" class="timer_num">{{min}}</div>
               <div class="timer_unit">Mins</div>
             </li>
             <li class="d-inline-flex flex-column justify-content-center align-items-center">
-              <div id="second" class="timer_num">23</div>
+              <div id="second" class="timer_num">{{sec}}</div>
               <div class="timer_unit">Sec</div>
             </li>
           </ul>
@@ -148,194 +112,27 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="product_slider_container">
-          <div class="owl-carousel owl-theme product_slider">
+          <div class="product-grid product_slider">
 
             <!-- Slide 1 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item">
-                <div class="product discount">
-                  <div class="product_image">
-                    <img src="assets/images/product_1.png" alt="">
+            <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let item of data">
+                <ng-template carouselSlide class="product-item">
+                  <div class="product-item product discount ">
+                    <div class="product_image">
+                      <img [src]="item.images" alt="">
+                    </div>
+                    <div class="favorite" [ngClass]="{'favorite_left':item.saleProduct != ''}"></div>
+                    <div class="product_bubble d-flex flex-column align-items-center"  [ngClass]="{'product_bubble_right product_bubble_red ':item.saleProduct != '','product_bubble_left product_bubble_green':item.newProduct}"><span *ngIf="item.newProduct">new</span><span *ngIf="!item.newProduct">{{item.saleProduct}}</span></div>
+                    <div class="product_info">
+                      <h6 class="product_name"><a>{{item.title}}</a></h6>
+                      <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice">${{item.discountPrice}}</span></div>
+                    </div>
                   </div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                    <div class="product_price">$520.00<span>$590.00</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item women">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_2.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                    <div class="product_price">$610.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item women">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_3.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                    <div class="product_price">$120.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 4 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item accessories">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_4.png" alt="">
-                  </div>
-                  <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                    <div class="product_price">$410.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 5 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item women men">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_5.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                    <div class="product_price">$180.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 6 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item accessories">
-                <div class="product discount">
-                  <div class="product_image">
-                    <img src="assets/images/product_6.png" alt="">
-                  </div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                    <div class="product_price">$520.00<span>$590.00</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 7 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item women">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_7.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                    <div class="product_price">$610.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 8 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item accessories">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_8.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                    <div class="product_price">$120.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 9 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item men">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_9.png" alt="">
-                  </div>
-                  <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                    <div class="product_price">$410.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 10 -->
-
-            <div class="owl-item product_slider_item">
-              <div class="product-item men">
-                <div class="product">
-                  <div class="product_image">
-                    <img src="assets/images/product_10.png" alt="">
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                    <div class="product_price">$180.00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </ng-template>
+            </ng-container>
+            </owl-carousel-o>
           </div>
-
-          <!-- Slider Navigation -->
-
-          <div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-          </div>
-          <div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-          </div>
-        </div>
       </div>
     </div>
   </div>

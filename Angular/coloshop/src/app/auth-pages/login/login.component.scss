@@ -1,0 +1,101 @@
+label{
+  width: 10%;
+  margin: 10px;
+}
+input{
+  width: 30%;
+  margin: 10px;
+}
+.cred{
+  color: darkred;
+}
+button{
+  margin: 5px;
+  width: 100px;
+  border: 2px outset darkred;
+  border-radius: 5px;
+  padding: 6px;
+}
+button:hover{
+  background-color: firebrick;
+  color: white;
+}
+#modal-content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(1fr, 3);
+}
+
+#modal-title {
+  font-size: 22px;
+}
+
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+}
+
+#modal-action-button {
+  margin-right: 30px;
+  background-color:#3b3b3b;
+}
+
+#modal-cancel-button {
+  background-color: #4e4e4e;
+}
+form {
+  border: 1px solid slategray;
+  padding: 50px 30px 30px;
+  display: block;
+  width: 60%;
+  border-radius: 20px;
+  margin: 0 auto;
+  background-color:aliceblue;
+
+}
+.form-control{
+  width: 70%;
+  display: inline-block;
+}
+label{
+  width: 20%;
+  text-align: right;
+  margin: 0 10px;
+}
+small{
+  display: block;
+}
+.form-control:focus {
+  color: black;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  box-shadow: none;
+}
+
+.box-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+}
+
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.error {
+  display: block;
+  width: 45%;
+  text-align: left;
+  margin: 0 auto;
+}
+.error small{
+  font-size: 12px !important;
+}

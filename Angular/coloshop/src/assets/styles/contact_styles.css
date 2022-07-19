@@ -818,7 +818,6 @@ section
 }
 .red_button
 {
-	display: -webkit-inline-box;
 	display: -moz-inline-box;
 	display: -ms-inline-flexbox;
 	display: -webkit-inline-flex;
@@ -883,7 +882,6 @@ section
 }
 .product_details_title p
 {
-	color: #;
 }
 
 /*********************************
@@ -1093,7 +1091,7 @@ section
 	font-weight: 400;
 	color: #b9b4c7 !important;
 }
-.input_ph::input-placeholder
+.input_ph::placeholder
 {
 	font-size: 16px !important;
 	font-weight: 400;
@@ -1212,7 +1210,7 @@ textarea:hover
 	font-weight: 400;
 	color: #b9b4c7 !important;
 }
-::input-placeholder
+::placeholder
 {
 	font-size: 14px !important;
 	font-weight: 400;

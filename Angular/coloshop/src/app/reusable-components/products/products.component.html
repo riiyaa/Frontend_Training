@@ -1,0 +1,36 @@
+<div class="row align-items-center">
+  <div class="col text-center">
+    <div class="new_arrivals_sorting">
+      <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'all'}" (click)="selected('all')">all</li>
+        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'women'}" (click)="selected('women')">women's</li>
+        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'accessories'}" (click)="selected('accessories')">accessories</li>
+        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" [ngClass]="{'active is-checked': isSelected == 'men'}" (click)="selected('men')">men's</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="product-grid" >
+
+      <!-- Product 1 -->
+      <div *ngFor="let item  of data">
+        <div class="product-item" [@myAnimation]>
+          <div class="product discount product_filter">
+            <div class="product_image">
+              <img [src]="item.images" alt="">
+            </div>
+            <div class="favorite" [ngClass]="{'favorite_left':item.saleProduct != ''}"></div>
+            <div class="product_bubble d-flex flex-column align-items-center" [ngClass]="{'product_bubble_right product_bubble_red ':item.saleProduct != '','product_bubble_left product_bubble_green':item.newProduct}"><span *ngIf="item.newProduct">new</span><span *ngIf="!item.newProduct">{{item.saleProduct}}</span></div>
+            <div class="product_info">
+              <h6 class="product_name"><a>{{item.title}}</a></h6>
+              <div class="product_price">${{item.price}}<span *ngIf="item.discountPrice">${{item.discountPrice}}</span></div>
+            </div>
+          </div>
+          <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

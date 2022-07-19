@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import {RouterModule} from "@angular/router";
 import { FooterComponent } from './footer/footer.component';
 import { NewsLetterComponent } from './news-letter/news-letter.component';
+import { ProductsComponent } from './products/products.component';
+import {TopNavComponent} from "./top-nav/top-nav.component";
 
 
 
@@ -11,16 +13,20 @@ import { NewsLetterComponent } from './news-letter/news-letter.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NewsLetterComponent
+    NewsLetterComponent,
+    ProductsComponent,
+    TopNavComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    NewsLetterComponent
+    NewsLetterComponent,
+    ProductsComponent,
+    TopNavComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class ReusableComponentModule { }

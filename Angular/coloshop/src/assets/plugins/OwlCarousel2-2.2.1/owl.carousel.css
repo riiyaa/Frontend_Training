@@ -243,3 +243,21 @@
     height: 100%;
     width: 100%;
 }
+.owl-theme .owl-nav{
+  display: flex !important;
+  justify-content: space-between !important;
+  background: transparent !important;
+  position: absolute;
+  top:50%;
+  width: 100%;
+  opacity: 0;
+}
+.owl-theme .owl-nav [class*='owl-']{
+  margin: 0 !important;
+  padding: 23px 10px !important;
+  border-radius: 0 !important;
+  font-size:12px !important ;
+}
+.owl-nav:hover{
+  opacity: 1;
+}
