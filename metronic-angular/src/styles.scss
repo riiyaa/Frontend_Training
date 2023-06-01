@@ -1,0 +1,269 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/assets/scss/variable";
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+:root{
+  --primary:#8950FC;
+  --light:#F3F6F9;
+  --muted:#B5B5C3;
+  --dark-grey:#3F4254;
+  --white:#ffffff;
+  --black:#000000
+}
+.clearfix:before,
+.clearfix:after {
+  width: 100%;
+  display: table;
+  content: '';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  position: relative;
+  font-family: 'Poppins', serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+svg {
+  display: block;
+}
+
+body, html {
+  height: 100%;
+}
+
+.float-left {
+  float: left;
+}
+.bor-bot + .bor-bot {
+  border-top: 1px solid black;
+}
+
+.icons {
+  padding: 8px;
+  line-height: normal !important;
+
+}
+
+.icons:active {
+  border-radius: 10px;
+  background: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 22.75px;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+.form-group {
+  margin-bottom: 22.75px;
+}
+.fv-plugins-icon-container {
+  position: relative;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--dark-grey);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid #E4E6EF;
+  border-radius: 5.5px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+.form-control.form-control-solid {
+  background-color: var(--light);
+  border-color: var(--light);
+  color: var(--dark-grey);
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  color: var(--dark-grey);
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 5.5px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+.btn.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.flex-root {
+  flex: 1;
+}
+.flex-column-fluid{
+  flex: 1 0 auto;
+}
+.flex-row-auto {
+  flex: 0 0 auto;
+}
+.flex-row-fluid {
+  flex: 1 auto;
+  min-width: 0;
+}
+.flex-column-auto {
+  flex: none;
+}
+.flex-col-fluid {
+  flex: 1 0 auto;
+}
+.flex-row-fluid {
+  flex: 1 auto;
+  min-width: 0;
+}
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+  .flex-lg-row {
+    flex-direction: row !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .header .container, .header .container-fluid, .header .container-sm, .header .container-md, .header .container-lg, .header .container-xl, .header .container-xxl {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .container {
+    padding: 0 25px;
+    max-width: 960px;
+    height: inherit;
+  }
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .w-lg-auto {
+    width: auto !important;
+  }
+  .w-lg-230px {
+    width: 230px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1340px;
+  }
+}
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+  width: 100%;
+  padding-right: 12.5px;
+  padding-left: 12.5px;
+  margin-right: auto;
+  margin-left: auto;
+  height: inherit;
+}
+.bg-light {
+  background-color: var(--light) !important;
+}
+.rounded {
+  border-radius: 5.5px !important;
+}
+.h-40px {
+  height: 40px !important;
+}
+.w-40px {
+  width: 40px !important;
+}

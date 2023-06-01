@@ -1,0 +1,111 @@
+.login.login-1 .login-signin,
+.login.login-1 .login-signup,
+.login.login-1 .login-forgot {
+  display: none;
+}
+.login.login-1.login-signin-on .login-signin {
+  display: block;
+}
+
+
+@media (min-width: 992px) {
+  .login .login-aside {
+    width: 100%;
+    max-width: 600px;
+  }
+  .login .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .login.login-1 .login-aside {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+  }
+}
+@media (max-width: 991.98px) {
+  .login.login-1 .login-form {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+@media (max-width: 575.98px) {
+  .login.login-1 .login-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .login.login-1 .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.pb-10, .py-10 {
+  padding-bottom: 32px !important;
+}
+.max-h-70px {
+  max-height: 70px !important;
+}
+
+a.text-hover-primary,
+.text-hover-primary {
+  -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+a.text-hover-primary:hover,
+.text-hover-primary:hover {
+  -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+  color: var(--primary) !important;
+}
+a.text-hover-primary:hover i,
+.text-hover-primary:hover i {
+  color: var(--primary) !important;
+}
+a.text-hover-primary:hover .svg-icon svg g [fill],
+.text-hover-primary:hover .svg-icon svg g [fill] {
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+  fill: var(--primary);
+}
+a.text-hover-primary:hover .svg-icon svg:hover g [fill],
+.text-hover-primary:hover .svg-icon svg:hover g [fill] {
+  transition: fill 0.3s ease;
+}
+@media (min-width: 992px) {
+  .pb-lg-0, .py-lg-0 {
+    padding-bottom: 0 !important;
+  }
+  .mb-lg-0, .my-lg-0 {
+    margin-bottom: 0 !important;
+  }
+  .mb-lg-20, .my-lg-20 {
+    margin-bottom: 65px !important;
+  }
+  .mt-lg-0, .my-lg-0 {
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 992px) {
+  .bottom{
+    display: none !important;
+  }
+  .flex-sm-row{
+    flex-direction: column !important;
+  }
+  .footer{
+    justify-content: flex-end;
+  }
+  .footer-sm{
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 100%;
+  }
+}
