@@ -1,0 +1,150 @@
+<div class="header-menu-wrapper header-menu-wrapper-left">
+  <div class="container">
+    <div class="header-menu">
+      <div class="main-page pointer" [ngClass]="{'menu-active':isSelect==1,'relative':isSelect==1 && showMenu}" (click)="showDropDown(1)">
+        <span class="font13 uppercase font-weight-bolder fontWhite" [ngClass]="{'fontBlack':isSelect==1}">Dashboard <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <div *ngIf="showMenu && isSelect==1" class="submenu">
+          <div *ngFor="let data of dashboardArray; let i=index" [ngClass]="{'relative':data?.isChild && isSubChild==i}" (click)="(data?.isChild ? showChild(i) :isSubChild=null);$event.stopPropagation()">
+            <div [ngClass]="{'showFlex':data?.isChild}" class="px30 py11 menu-text pointer">
+              <ng-container *ngIf="!data?.isChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+              <span>{{data?.name}}</span>
+              <ng-container *ngIf="data?.isChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+              <!-- show second Dropdown       -->
+            </div>
+            <div *ngIf="isSubChild==i && data?.isChild" class="submenu1">
+              {{data|json}}
+              <div *ngFor="let child of data?.childArray; let index1=index" [ngClass]="{'relative':child?.isSubChild && isSubChild1==index1}" (click)="(child?.isSubChild ? showSubChild(index1) :isSubChild1=null);$event.stopPropagation()">
+                <div [ngClass]="{'showFlex':child?.isSubChild}" class="px30 py11 submenu-text pointer">
+                  <ng-container *ngIf="!child?.isSubChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                  <span>{{child?.name}}</span>
+                  <ng-container *ngIf="child?.isSubChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                </div>
+                <div *ngIf="child?.isSubChild && isSubChild1==index1" class="submenu1">
+                  <div *ngFor="let child1 of child?.subChildArray;">
+                    <div [ngClass]="{'showFlex':child1?.isSubChildOfChild}" class="px30 py11 submenu-text pointer">
+                      <ng-container *ngIf="!child1?.isSubChildOfChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                      <span>{{child1?.name}}</span>
+                      <ng-container *ngIf="child1?.isSubChildOfChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-page pointer" [ngClass]="{'menu-active':isSelect==2,'relative':isSelect==2 && showMenu}" (click)="showDropDown(2)">
+        <span class="font13 uppercase font-weight-bolder fontWhite" [ngClass]="{'fontBlack':isSelect==2}">Features <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <!-- show first Dropdown       -->
+        <div *ngIf="showMenu && isSelect==2" class="submenu">
+          <div *ngFor="let data of featuresArray; let i=index" [ngClass]="{'relative':data?.isChild && isSubChild==i}" (click)="(data?.isChild ? showChild(i) :isSubChild=null);$event.stopPropagation()">
+            <div [ngClass]="{'showFlex':data?.isChild}" class="px30 py11 menu-text pointer">
+              <ng-container *ngIf="!data?.isChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+              <span>{{data?.name}}</span>
+              <ng-container *ngIf="data?.isChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+              <!-- show second Dropdown       -->
+            </div>
+            <div *ngIf="isSubChild==i && data?.isChild" class="submenu1">
+              <div *ngFor="let child of data?.childArray; let index1=index" [ngClass]="{'relative':child?.isSubChild && isSubChild1==index1}" (click)="(child?.isSubChild ? showSubChild(index1) :isSubChild1=null);$event.stopPropagation()">
+                <div [ngClass]="{'showFlex':child?.isSubChild}" class="px30 py11 submenu-text pointer">
+                  <ng-container *ngIf="!child?.isSubChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                  <span>{{child?.name}}</span>
+                  <ng-container *ngIf="child?.isSubChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                </div>
+                <div *ngIf="child?.isSubChild && isSubChild1==index1" class="submenu1">
+                  <div *ngFor="let child1 of child?.subChildArray;">
+                    <div [ngClass]="{'showFlex':child1?.isSubChildOfChild}" class="px30 py11 submenu-text pointer">
+                      <ng-container *ngIf="!child1?.isSubChildOfChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                      <span>{{child1?.name}}</span>
+                      <ng-container *ngIf="child1?.isSubChildOfChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-page pointer" [ngClass]="{'menu-active':isSelect==3,'relative':isSelect==3 && showMenu}" (click)="showDropDown(3)">
+        <span class="font13 uppercase font-weight-bolder fontWhite" [ngClass]="{'fontBlack':isSelect==3}">CRUD <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <div *ngIf="showMenu && isSelect==3" class="submenu">
+          <div *ngFor="let data of crudArray; let i=index" [ngClass]="{'relative':data?.isChild && isSubChild==i}" (click)="(data?.isChild ? showChild(i) :isSubChild=null);$event.stopPropagation()">
+            <div [ngClass]="{'showFlex':data?.isChild}" class="px30 py11 menu-text pointer">
+              <ng-container *ngIf="!data?.isChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+              <span>{{data?.name}}</span>
+              <ng-container *ngIf="data?.isChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+              <!-- show second Dropdown       -->
+            </div>
+            <div *ngIf="isSubChild==i && data?.isChild" class="submenu1">
+              <div *ngFor="let child of data?.childArray; let index1=index" [ngClass]="{'relative':child?.isSubChild && isSubChild1==index1}" (click)="(child?.isSubChild ? showSubChild(index1) :isSubChild1=null);$event.stopPropagation()">
+                <div [ngClass]="{'showFlex':child?.isSubChild}" class="px30 py11 submenu-text pointer">
+                  <ng-container *ngIf="!child?.isSubChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                  <span>{{child?.name}}</span>
+                  <ng-container *ngIf="child?.isSubChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                </div>
+                  <div *ngIf="child?.isSubChild && isSubChild1==index1" class="submenu1">
+                  <div *ngFor="let child1 of child?.subChildArray;">
+                    <div [ngClass]="{'showFlex':child1?.isSubChildOfChild}" class="px30 py11 submenu-text pointer">
+                      <ng-container *ngIf="!child1?.isSubChildOfChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                      <span>{{child1?.name}}</span>
+                      <ng-container *ngIf="child1?.isSubChildOfChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-page" [ngClass]="{'menu-active':isSelect==4,'relative':isSelect==4 && showMenu}" (click)="showDropDown(4)">
+        <span class="font13 uppercase font-weight-bolder fontWhite" [ngClass]="{'fontBlack':isSelect==4}">App <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <div *ngIf="showMenu && isSelect==4" class="submenu">
+          <div *ngFor="let data of appArray; let i=index" [ngClass]="{'relative':data?.isChild && isSubChild==i}" (click)="(data?.isChild ? showChild(i) :isSubChild=null);$event.stopPropagation()">
+            <div [ngClass]="{'showFlex':data?.isChild}" class="px30 py11 menu-text pointer">
+              <ng-container *ngIf="!data?.isChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+              <span>{{data?.name}}</span>
+              <ng-container *ngIf="data?.isChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+              <!-- show second Dropdown       -->
+            </div>
+            <div *ngIf="isSubChild==i && data?.isChild" class="submenu1">
+              <div *ngFor="let child of data?.childArray; let index1=index" [ngClass]="{'relative':child?.isSubChild && isSubChild1==index1}" (click)="(child?.isSubChild ? showSubChild(index1) :isSubChild1=null);$event.stopPropagation()">
+                <div [ngClass]="{'showFlex':child?.isSubChild}" class="px30 py11 submenu-text pointer">
+                  <ng-container *ngIf="!child?.isSubChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                  <span>{{child?.name}}</span>
+                  <ng-container *ngIf="child?.isSubChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                </div>
+                <div *ngIf="child?.isSubChild && isSubChild1==index1" class="submenu1">
+                  <div *ngFor="let child1 of child?.subChildArray;">
+                    <div [ngClass]="{'showFlex':child1?.isSubChildOfChild}" class="px30 py11 submenu-text pointer">
+                      <ng-container *ngIf="!child1?.isSubChildOfChild"><i class="fa-solid fa-circle fa-2xs icon-size"></i></ng-container>
+                      <span>{{child1?.name}}</span>
+                      <ng-container *ngIf="child1?.isSubChildOfChild"><i class="fa-solid fa-angle-right"></i></ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-page" [ngClass]="{'menu-active':isSelect==5}" (click)="showDropDown(5)">
+        <span class="font13 uppercase font-weight-bolder fontWhite" [ngClass]="{'fontBlack':isSelect==5}">Pages <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <div *ngIf="showMenu && isSelect==5" class="pages-menu">
+            <div *ngFor="let data of pagesArray; let in=index" class="first-menu">
+              <h4>{{data.name}}</h4>
+              <div style="padding: 0 0 20px 0;">
+                <div class="menu-field" *ngFor="let res of data?.child">
+                  <span><i class="fa-solid fa-minus"></i> {{res.name}}</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
