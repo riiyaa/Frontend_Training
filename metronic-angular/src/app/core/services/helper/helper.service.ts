@@ -6,11 +6,11 @@ import { CommonService } from './common/common.service';
   providedIn: 'root'
 })
 export class HelperService {
-  http: HttpService;
-  common: CommonService;
+  http: any;
+  common: any;
 
-  constructor( http: HttpService, common: CommonService)  {    
-    this.http = http;
-    this.common = common;
+  constructor( public _http: HttpService, public _common: CommonService)  {
+    this.http = _http;
+    this.common = _common;
    }
 }

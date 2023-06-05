@@ -1,7 +1,9 @@
-<div class="flex flex-col flex-root">
+<div class="flex flex-col flex-root" style="background-image: url(assets/images/theme-bg.jpg); background-size: cover; background-position: center" >
   <div class="flex flex-row flex-column-fluid">
     <div class="flex flex-col flex-row-fluid">
       <app-navbar></app-navbar>
+      <app-bottom-navbar></app-bottom-navbar>
+      <app-sidebar *ngIf="helper.common.isOpenSidebar"></app-sidebar>
 <!--      <router-outlet></router-outlet>-->
     </div>
   </div>

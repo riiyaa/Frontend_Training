@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CommonService {
-  isEdit: boolean = false;
-  isUserOrRole : string = '';
+  isOpenSidebar: boolean =false;
   constructor() { }
 }

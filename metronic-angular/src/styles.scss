@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "src/assets/scss/variable";
+@import "src/assets/scss/metronic-style";
+//@import "~flaticon/flaticon.css";
+
 
 
 @font-face {
@@ -28,12 +31,35 @@
 }
 :root{
   --primary:#8950FC;
+  --secondary: #E4E6EF;
   --light:#F3F6F9;
   --muted:#B5B5C3;
   --dark-grey:#3F4254;
   --white:#ffffff;
-  --black:#000000
+  --black:#000000;
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --gray: #7E8299;
+  --success: #1BC5BD;
+  --info: #6993FF;
+  --warning: #FFA800;
+  --danger: #F64E60;
+  --dark: #181C32;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .clearfix:before,
 .clearfix:after {
   width: 100%;
@@ -49,6 +75,18 @@ body {
   font-family: 'Poppins', serif;
   font-size: 13px;
   line-height: 1.5;
+  &.overlay {
+    &::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      z-index: 1000;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -154,21 +192,6 @@ p {
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
 }
-.btn {
-  display: inline-block;
-  font-weight: normal;
-  color: var(--dark-grey);
-  text-align: center;
-  vertical-align: middle;
-  background-color: transparent;
-  border: 1px solid transparent;
-  font-size: 13px;
-  line-height: 1.5;
-  border-radius: 5.5px;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-}
 .btn.btn-primary {
   color: var(--white);
   background-color: var(--primary);
@@ -233,9 +256,6 @@ p {
   .w-lg-auto {
     width: auto !important;
   }
-  .w-lg-230px {
-    width: 230px !important;
-  }
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
@@ -267,3 +287,4 @@ p {
 .w-40px {
   width: 40px !important;
 }
+

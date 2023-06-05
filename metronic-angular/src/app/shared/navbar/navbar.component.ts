@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {HelperService} from "../../core/services/helper/helper.service";
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   isOpenDropdown = ''
+  showNotification = 1
 
-  constructor() { }
+
+  constructor(public helper:HelperService) { }
 
   ngOnInit(): void {
   }
 
   toggleDropDown(name: any) {
     this.isOpenDropdown = this.isOpenDropdown == name ? '' : name
+  }
+
+  openSidebar() {
+    document.body.classList.add('overlay')
+    this.helper.common.isOpenSidebar = true
+    this.isOpenDropdown = ''
   }
 }
