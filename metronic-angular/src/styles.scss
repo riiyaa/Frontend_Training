@@ -75,6 +75,7 @@ body {
   font-family: 'Poppins', serif;
   font-size: 13px;
   line-height: 1.5;
+  color: var(--dark-grey);
   &.overlay {
     &::before {
       content: "";
@@ -124,10 +125,6 @@ button {
   display: inline-block;
 }
 
-svg {
-  display: block;
-}
-
 body, html {
   height: 100%;
 }
@@ -155,7 +152,7 @@ body, html {
 }
 p {
   margin-top: 0;
-  margin-bottom: 22.75px;
+  margin-bottom: 1rem;
 }
 
 .text-muted {
@@ -287,4 +284,27 @@ p {
 .w-40px {
   width: 40px !important;
 }
-
+.card-rounded {
+  border-radius: 0.42rem;
+}
+.font-size-sm {
+  font-size: 0.925rem;
+}
+.font-size-h3 {
+  font-size: 1.5rem ;
+}
+.font-size-h2 {
+  font-size: 1.75rem ;
+}
+.font-size-lg {
+  font-size: 1.08rem;
+}
+.font-size-h4 {
+  font-size: 1.35rem ;
+}
+.font-size-sm {
+  font-size: 0.925rem;
+}
+.progress.progress-xs {
+  height: 0.5rem;
+}

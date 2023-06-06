@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import { NavPopupComponent } from './nav-popup/nav-popup.component';
 import { BottomNavbarComponent } from './bottom-navbar/bottom-navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -12,12 +13,14 @@ import { BottomNavbarComponent } from './bottom-navbar/bottom-navbar.component';
     NavbarComponent,
     SidebarComponent,
     NavPopupComponent,
-    BottomNavbarComponent
+    BottomNavbarComponent,
+    FooterComponent
   ],
     exports: [
         NavbarComponent,
         SidebarComponent,
-        BottomNavbarComponent
+        BottomNavbarComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule
