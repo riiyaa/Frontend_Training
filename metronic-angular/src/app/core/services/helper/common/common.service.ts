@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class CommonService {
   isOpenSidebar: boolean =false;
+  isShowNavbar: boolean =false;
   constructor() { }
 }

@@ -2,8 +2,8 @@
   <div class="flex flex-row flex-column-fluid">
     <div class="flex flex-col flex-row-fluid">
       <app-navbar></app-navbar>
+      <app-sidebar></app-sidebar>
       <app-bottom-navbar></app-bottom-navbar>
-      <app-sidebar *ngIf="helper.common.isOpenSidebar"></app-sidebar>
       <div class="d-flex flex-row flex-row-fluid container">
         <div class="main d-flex flex-column flex-row-fluid">
           <div class="subheader py-2 py-lg-6">
@@ -27,7 +27,23 @@
               </div>
 
               <div class="d-flex align-items-center">
-                <div class="btn btn-light-primary btn-sm font-weight-bold mr-2"><span class="opacity-60 font-weight-bold mr-2">Today:</span><span class="font-weight-bold">Jun 6</span></div>
+                <div class="btn btn-light-primary btn-sm font-weight-bold mr-2">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+<!--                  <button mat-raised-button (click)="picker.open()">-->
+                    <svg (click)="picker.open()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                        <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                        <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                      </g>
+                    </svg>
+<!--                  </button>-->
+                </div>
                 <div class="svg-icon svg-icon-success svg-icon-2x">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -48,3 +64,4 @@
     </div>
   </div>
 </div>
+

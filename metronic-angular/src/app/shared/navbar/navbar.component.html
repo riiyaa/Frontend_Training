@@ -37,7 +37,6 @@
                   </span>
                 </span>
               </div>
-
               <div><input type="text" class="form-control h-40px" placeholder="Search..."></div>
             </div>
           </form>
@@ -144,7 +143,7 @@
       <!--begin::User-->
       <div class="dropdown">
         <!--begin::Toggle-->
-        <div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
+        <div class="topbar-item mr10" data-toggle="dropdown" data-offset="0px,0px">
           <div class="btn btn-icon btn-clean h-40px w-40px btn-dropdown" (click)="toggleDropDown('dropdown4')">
 			                    <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/General/User.svg--><svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -166,11 +165,12 @@
         <app-nav-popup *ngIf="isOpenDropdown=='dropdown4'" [showDropdown]="isOpenDropdown"></app-nav-popup>
         <!--end::Dropdown-->
       </div>
+
       <!--end::User-->
     </div>
     <div class="d-flex align-center nav-sm">
 
-      <button class="btn p0 burger-icon burger-icon-left ml15">
+      <button class="btn p0 burger-icon burger-icon-left ml15" (click)="openNavbar()">
         <span></span>
       </button>
 

@@ -11,11 +11,11 @@ export class NavPopupComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   onPageClick(event:any) {
-    console.log(event,this.showDropdown)
+    // console.log(event,this.showDropdown)
     // if( this.showDropdown!=''){
     //   const x = this.showDropdown
       if (!this.eRef.nativeElement.contains(event.target)) {
-        console.log('mckjdmnkfj')
+        // console.log('mckjdmnkfj')
         // this.showDropdown=''
         // setTimeout(()=>{
         //   this.showDropdown=x

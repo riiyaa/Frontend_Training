@@ -7,6 +7,7 @@ import {HelperService} from "../../core/services/helper/helper.service";
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
+  isSelect = 1
 
   constructor(public helper:HelperService) { }
 

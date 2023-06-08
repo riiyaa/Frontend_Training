@@ -5,6 +5,10 @@ import {SidebarComponent} from "./sidebar/sidebar.component";
 import { NavPopupComponent } from './nav-popup/nav-popup.component';
 import { BottomNavbarComponent } from './bottom-navbar/bottom-navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+
 
 
 
@@ -22,8 +26,11 @@ import { FooterComponent } from './footer/footer.component';
         BottomNavbarComponent,
         FooterComponent
     ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ]
 })
 export class SharedModule { }

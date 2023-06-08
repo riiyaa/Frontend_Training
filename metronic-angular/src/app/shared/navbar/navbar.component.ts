@@ -26,4 +26,10 @@ export class NavbarComponent implements OnInit {
     this.helper.common.isOpenSidebar = true
     this.isOpenDropdown = ''
   }
+
+  openNavbar() {
+    document.body.classList.add('overlay')
+    this.helper.common.isShowNavbar = !this.helper.common.isShowNavbar
+    this.isOpenDropdown = ''
+  }
 }
