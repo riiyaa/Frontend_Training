@@ -1,8 +1,8 @@
+<app-sidebar (closeSideNav)="this.helper.common.isShowNavbar=false; document.body.classList.remove('overlay')"></app-sidebar>
 <div class="flex flex-col flex-root" style="background-image: url(assets/images/theme-bg.jpg); background-size: cover; background-position: center" >
   <div class="flex flex-row flex-column-fluid">
     <div class="flex flex-col flex-row-fluid">
       <app-navbar></app-navbar>
-      <app-sidebar></app-sidebar>
       <app-bottom-navbar></app-bottom-navbar>
       <div class="d-flex flex-row flex-row-fluid container">
         <div class="main d-flex flex-column flex-row-fluid">

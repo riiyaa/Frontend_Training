@@ -13,4 +13,5 @@ export class PagesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  protected readonly document = document;
 }
