@@ -1,0 +1,7 @@
+@import "../../style/global-styles";
+.nav-text{
+  color: #7E8299;;
+}
+.active .nav-text{
+  color: var(--primary);
+}

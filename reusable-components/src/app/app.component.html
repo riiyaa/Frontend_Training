@@ -1,0 +1,219 @@
+
+<div class="whiteBg6">
+  <div class="container">
+    <h1 class="text-center">My Angular Library</h1>
+    <br/>
+    <br/>
+    <br/>
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Buttons
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-button [color]="'primary'"></lib-button>
+        <lib-button [color]="'secondary'"></lib-button>
+        <lib-button [color]="'success'"></lib-button>
+        <lib-button [color]="'danger'"></lib-button>
+        <lib-button [color]="'warning'"></lib-button>
+        <lib-button [color]="'info'"></lib-button>
+        <lib-button [color]="'light'"></lib-button>
+        <lib-button [color]="'dark'"></lib-button>
+      </div>
+    </div>
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Button Group
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-button-group [data]="numbersOfData" [color]="'primary'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'secondary'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'success'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'danger'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'warning'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'info'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'light'"></lib-button-group>
+        <lib-button-group [data]="numbersOfData" [color]="'dark'"></lib-button-group>
+      </div>
+    </div>
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Cards
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-card [title]="'Card1'" [data]="dummyData"></lib-card>
+        <lib-card [title]="'Card2'" [data]="dummyData" [subTitle]="'subTitle'"></lib-card>
+        <lib-card [title]="'Card3'" [data]="dummyData" [footer]="footerData"></lib-card>
+      </div>
+    </div>
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Checkbox
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flex align-center mx25 my15">
+        <lib-checkbox [color]="'primary'"></lib-checkbox>
+          <div class="flex flex-column inline-block ml20">
+            <a  class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">
+              Create FireStone Logo
+            </a>
+            <span class="text-muted font-weight-bold ">
+                    Due in 2 Days
+                </span>
+          </div>
+        </div>
+        <div class="flex align-center mx25 my15">
+          <lib-checkbox [color]="'success'"></lib-checkbox>
+          <div class="flex flex-column inline-block ml20">
+            <a  class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">
+              Create FireStone Logo
+            </a>
+            <span class="text-muted font-weight-bold ">
+                    Due in 2 Days
+                </span>
+          </div>
+        </div>
+        <div class="flex align-center mx25 my15">
+          <lib-checkbox [color]="'warning'"></lib-checkbox>
+          <div class="flex flex-column inline-block ml20">
+            <a  class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">
+              Create FireStone Logo
+            </a>
+            <span class="text-muted font-weight-bold ">
+                    Due in 2 Days
+                </span>
+          </div>
+        </div>
+        <div class="flex align-center mx25 my15">
+          <lib-checkbox [color]="'info'"></lib-checkbox>
+          <div class="flex flex-column inline-block ml20">
+            <a  class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">
+              Create FireStone Logo
+            </a>
+            <span class="text-muted font-weight-bold ">
+                    Due in 2 Days
+                </span>
+          </div>
+        </div>
+        <div class="flex align-center mx25 my15">
+          <lib-checkbox [color]="'danger'"></lib-checkbox>
+          <div class="flex flex-column inline-block ml20">
+            <a  class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">
+              Create FireStone Logo
+            </a>
+            <span class="text-muted font-weight-bold ">
+                    Due in 2 Days
+                </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Dropdown
+          </h3>
+        </div>
+      </div>
+      <div class="card-body h300">
+        <lib-dropdown [buttonName]="'Dropdown1'" [dropdownData]="numbersOfData"></lib-dropdown>
+        <div class="mt10">{{dummyData}}{{dummyData}}{{dummyData}}</div>
+      </div>
+    </div>
+
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            NavBar
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-nav [navItems]="numbersOfData" (selectTab)="open($event)" [navContent]="numbersOfData"></lib-nav>
+      </div>
+    </div>
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Alerts
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-alert [color]="'primary'"></lib-alert>
+        <lib-alert [color]="'success'"></lib-alert>
+        <lib-alert [color]="'danger'"></lib-alert>
+        <lib-alert [color]="'warning'"></lib-alert>
+        <lib-alert [color]="'info'"></lib-alert>
+        <lib-alert [color]="'dark'"></lib-alert>
+      </div>
+    </div>
+
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Modal
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <lib-button [color]="'primary'" (click)="openModal()"></lib-button>
+        <div *ngIf="modalShow">
+          <lib-modal [body]="'Modal body text goes here.'"
+                     [title]="'Modal Title'"
+                     [showFooter]="true"
+                     [saveLabel]="'Save'"
+                     [closeLabel]="'Close'"
+                     (closeModal)="openModal()"
+                     (saveModal)="openModal()"></lib-modal>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card card-custom">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label">
+            Modal
+          </h3>
+        </div>
+      </div>
+      <div class="card-body">
+          <div>
+            <lib-table [column_heading]="column_heading" [all_row]="all_row" [dark]="dark"></lib-table>
+          </div>
+        <br/>
+          <div>
+            <lib-table [column_heading]="column_heading" [all_row]="all_row" [dark]="!dark"></lib-table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

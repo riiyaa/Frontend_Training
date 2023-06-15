@@ -1,0 +1,91 @@
+@import "../../style/global-styles";
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+.checkbox > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox > span:after {
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 2px 2px 0  !important;
+  transform: rotate(45deg) ;
+  margin-top: -2px;
+}
+.checkbox > input:checked ~ span:after {
+  border-color: #ffffff;
+}
+.checkbox > input:checked ~ span:after {
+  display: block;
+}
+.checkbox.checkbox-lg > span:after {
+  width: 6px;
+  height: 12px;
+}
+.checkbox > input:checked ~ span {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.checkbox.checkbox-lg > span {
+  height: 24px;
+  width: 24px;
+}
+.checkbox > span {
+  background-color: #EBEDF3;
+  border: 1px solid transparent;
+}
+.checkbox > span {
+  height: 18px;
+  width: 18px;
+}
+.checkbox > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 0.42rem;
+}
+.checkbox.checkbox-light-success > span {
+  background-color: #C9F7F5;
+  border: 1px solid transparent;
+}
+.checkbox.checkbox-light-primary > span {
+  background-color: #EEE5FF;
+  border: 1px solid transparent;
+}
+.checkbox.checkbox-light-warning > span {
+  background-color: #FFF4DE;
+  border: 1px solid transparent;
+}.checkbox.checkbox-light-danger > span {
+   background-color: #FFE2E5;
+   border: 1px solid transparent;
+ }
+.checkbox.checkbox-light-success > input:checked ~ span {
+  background-color: #1BC5BD;
+}
+.checkbox.checkbox-light-primary > input:checked ~ span {
+  background-color: #8950FC;
+}
+.checkbox.checkbox-light-warning > input:checked ~ span {
+  background-color: #FFA800;
+}
+.checkbox.checkbox-light-info > input:checked ~ span {
+  background-color: #6993FF;
+}
+.checkbox.checkbox-light-danger > input:checked ~ span {
+  background-color: #F64E60;
+}
+.checkbox-inline{
+  display: inline-block;
+  margin: 5px;
+}

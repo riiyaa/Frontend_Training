@@ -1,0 +1,5 @@
+<div class="btn-group m-3" role="group" >
+  <ng-container *ngFor="let res of data; let i=index">
+    <button type="button" [className]="'text-capitalize font-weight-bolder btn btn-'+color" [ngClass]="{'selected':selectButton==i}" (click)="selectButton=i">{{res}}</button>
+  </ng-container>
+</div>

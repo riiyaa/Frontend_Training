@@ -1,0 +1,58 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "../../style/global-styles";
+.btn-success.selected:hover {
+  color: #ffffff;
+  background-color: #16a39d;
+  border-color: #159892;
+}
+.selected{
+  box-shadow: 0 0 0 0.2rem red;
+}
+.btn-primary.selected {
+  color: #ffffff;
+  background-color: #702afb;
+  border-color: #671efb;
+  box-shadow: 0 0 0 0.2rem rgba(155, 106, 252, 0.5);
+}
+.btn-secondary.selected {
+  color: #212121;
+  background-color: #ced7df;
+  border-color: #c6d1da;
+  box-shadow: 0 0 0 0.2rem rgba(200, 204, 207, 0.5);
+}
+.btn-success.selected {
+  color: #ffffff;
+  background-color: #16a39d;
+  border-color: #159892;
+  box-shadow: 0 0 0 0.2rem rgba(61, 206, 199, 0.5);
+}
+.btn-danger.selected {
+  color: #ffffff;
+  background-color: #f42a3f;
+  border-color: #f41d34;
+  box-shadow: 0 0 0 0.2rem rgba(247, 105, 120, 0.5);
+}
+.btn-warning.selected {
+  color: #ffffff;
+  background-color: #d98f00;
+  border-color: #cc8600;
+  box-shadow: 0 0 0 0.2rem rgba(222, 148, 5, 0.5);
+}
+.btn-info.selected {
+  color: #ffffff;
+  background-color: #4377ff;
+  border-color: #366eff;
+  box-shadow: 0 0 0 0.2rem rgba(128, 163, 255, 0.5);
+}
+.btn-light.selected{
+  color: #212121;
+  background-color: #dae3ec;
+  border-color: #d1dde8;
+  box-shadow: 0 0 0 0.2rem rgba(212, 214, 217, 0.5);
+}
+.btn-dark.selected {
+  color: #ffffff;
+  background-color: #0e0e0e;
+  border-color: #080808;
+  box-shadow: 0 0 0 0.2rem rgba(66, 66, 66, 0.5);
+}

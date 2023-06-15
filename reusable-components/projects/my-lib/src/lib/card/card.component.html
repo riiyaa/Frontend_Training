@@ -1,0 +1,16 @@
+<div class="card card-custom">
+  <div class="card-header" *ngIf="title">
+    <div class="card-title">
+      <h3 class="card-label">
+        {{title}}
+        <small *ngIf="subTitle">{{subTitle}}</small>
+      </h3>
+    </div>
+  </div>
+  <div class="card-body">
+    {{data}}
+  </div>
+  <div class="card-footer " *ngIf="footer">
+    <div>{{footer}}</div>
+  </div>
+</div>
