@@ -10,6 +10,7 @@ import { TableComponent } from './table/table.component';
 import { NavComponent } from './nav/nav.component';
 import { AlertComponent } from './alert/alert.component';
 import { ModalComponent } from './modal/modal.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 
 
@@ -25,6 +26,7 @@ import { ModalComponent } from './modal/modal.component';
     NavComponent,
     AlertComponent,
     ModalComponent,
+    AccordionComponent,
   ],
   imports: [
     NgForOf,
@@ -41,7 +43,8 @@ import { ModalComponent } from './modal/modal.component';
     TableComponent,
     NavComponent,
     AlertComponent,
-    ModalComponent
+    ModalComponent,
+    AccordionComponent,
   ]
 })
 export class MyLibModule { }

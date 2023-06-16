@@ -1,0 +1,16 @@
+<div class="accordion" >
+  <ng-container *ngFor="let data of items; let i=index">
+    <div class="accordion-item">
+      <h2 class="accordion-header" [id]="'heading'+i" (click)="click(i)">
+        <button class="accordion-button" [ngClass]="{ 'collapsed': i+1 != itemSelect }" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i+1" aria-expanded="true" [attr.aria-controls]="'collapse'+i+1">
+          {{data.title}}
+        </button>
+      </h2>
+      <div [id]="'collapse'+i+1" class="accordion-collapse collapse" [ngClass]="{ 'show': i+1 == itemSelect }" [attr.aria-labelledby]="'heading'+i+1" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          {{data.content}}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
